@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me - Lucas García de Viedma Pérez</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lucas García de Viedma Pérez - Data Architect and Entrepreneur. Building data products, growing startups, and scaling infrastructure.">
+    <meta name="author" content="Lucas García de Viedma Pérez">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
+    <link rel="manifest" href="logo/site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="projects/ico.svg" alt="Logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ventures.html">Ventures & Projects</a></li>
+                <li><a href="about_me.html" class="active">About me</a></li>
+                <li><a href="background.html">Background</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-fade-in">
+        <section class="about-page">
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="about-image">
+                        <img src="me.jpg" alt="Lucas García de Viedma Pérez">
+                    </div>
+                    <div class="tab-navigation about-tabs">
+                        <button class="tab-btn active" data-tab="personal">Personal</button>
+                        <button class="tab-btn" data-tab="professional">Professional</button>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="about-tab-content" id="personal-tab">
+                        <h1>About me</h1>
+                        <p>Hey! I'm Lucas, CEO and co-founder of CloudClerk, and part of the founding team behind Numia and Orbital. I'm deeply driven by data and complex systems, and I spend most of my time turning one into solutions for the other. Since my master's degree, where I first dove into innovation and company building, startups have been my default mental state. I'm a workaholic by nature, which helps when your brain never stops looking for the next problem worth solving.</p>
+                        <p>I'm originally from Spain (Alcalá de Henares), but I've lived and worked across Europe — from a forest outside Helsinki (Finland) to Florence (Italy) and Cannes (France). I operate fluently in Spanish, English, and French, and I've shortly dabbled in Chinese, though execution elsewhere took priority.</p>
+                        <p>I'm competitive by design. I hold a red belt in taekwondo (one step away from black, by choice rather than ability), reached the top 2% of League of Legends players worldwide, and now focus that same intensity on bouldering. I also love surfing — infrequently practiced, but deeply appreciated.</p>
+                        <p>Although now I'm too obsessed with building projects, I've read obsessively. My favorite genre has always been fantasy novels (to name a few of my long-time favorite authors: Dumas, Emilio Salgari, Laura Gallego, and Patrick Rothfuss), although there are many socio-economics-related titles that I'm passionate about.</p>
+                        <p>I really enjoy debating — about anything interesting, from philosophical topics to politics, economics, or even fruit rankings. That aren't many things I enjoy as much as exchanging opinions on topics that aren't simple or don't have a clear answer. And finally, I'm a huge fan of food. Cooking with the people I care about, or going with them to new restaurants is one of the things that I enjoy the most.</p>
+                    </div>
+                    <div class="about-tab-content hidden" id="professional-tab">
+                        <h1>Professional</h1>
+                        <p>I'm a Data Architect and Entrepreneur with a focus on building data products that solve real problems at scale. Currently, I lead CloudClerk as CEO, where we're building BigQuery cost monitoring and optimization tools — combining 5+ years of big data experience with AI agents to help teams gain observability and reduce costs.</p>
+                        <p>In parallel, I'm part of the founding team at Numia, where I serve as Data Lead processing over 50TB of blockchain data for the Cosmos ecosystem. Our analytics products are used by major foundations including DYDX, Celestia, and Cosmoshub. I also co-founded Orbital, a venture studio exploring AI agents within complex systems through consulting and applied research.</p>
+                        <p>My technical foundation is rooted in BigQuery, ClickHouse, Python, TypeScript, and cloud infrastructure (primarily Google Cloud). I approach problems through system-based development and layered context — breaking down complexity into manageable, interconnected layers that can scale independently.</p>
+                        <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University (Finland), graduating with a 9.2 GPA. Before that, I earned my Bachelor's in Computer Science Engineering from Universidad de Alcalá. My thesis focused on blockchain data analytics, which directly led to my work at Numia.</p>
+                        <p>Across my ventures, I've helped generate over $2M in revenue, reached more than 150,000 individual users, and served over 50 client businesses. I believe in building products that are technically excellent and genuinely useful — no shortcuts, no fluff.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.about-tabs .tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.about-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const tabName = button.dataset.tab;
+                document.querySelectorAll('.about-tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(tabName + '-tab').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

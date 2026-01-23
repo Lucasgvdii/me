@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun:*)",
+      "Bash(git -C \"c:\\\\Personal\\\\Trabajo_Numia\\\\me\" status --short)",
+      "Bash(dir:*)"
+    ]
+  }
+}
