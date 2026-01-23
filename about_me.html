@@ -51,6 +51,69 @@
                         <button class="tab-btn active" data-tab="personal">Personal</button>
                         <button class="tab-btn" data-tab="professional">Professional</button>
                     </div>
+                    <a href="cv.pdf" download class="about-cv-btn professional-only hidden">Download CV</a>
+                    <div class="about-sidebar-section professional-only hidden">
+                        <h4>Experience</h4>
+                        <div class="about-sidebar-item">
+                            <img src="projects/cloudclerklogo.png" alt="CloudClerk">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">Co-founder - CEO</span>
+                                <span class="about-sidebar-sub">CloudClerk <span class="about-sidebar-year">(2025-Present)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="projects/numalgoo.svg" alt="Numia">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">Founding Team - Data Lead</span>
+                                <span class="about-sidebar-sub">Numia <span class="about-sidebar-year">(2024-Present)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="employment/binary_builders_logo.jfif" alt="Binary Builders">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">Data Scientist & Engineer</span>
+                                <span class="about-sidebar-sub">Binary Builders <span class="about-sidebar-year">(2022-24)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="employment/evidence_based_behavior_logo.jfif" alt="EB2">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">Software Dev & Data Scientist</span>
+                                <span class="about-sidebar-sub">Evidence Based Behavior <span class="about-sidebar-year">(2020-21)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-sidebar-section professional-only hidden">
+                        <h4>Education <span class="about-sidebar-year">[9.2 GPA]</span></h4>
+                        <div class="about-sidebar-item">
+                            <img src="education/aalto_university_logo.jfif" alt="Aalto">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">MSc Data Science</span>
+                                <span class="about-sidebar-sub">Aalto University <span class="about-sidebar-year">(2022-23)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="education/university_of_ljubljana_economics_logo.jfif" alt="Ljubljana">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">Exchange Program</span>
+                                <span class="about-sidebar-sub">University of Ljubljana <span class="about-sidebar-year">(2022)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="education/universidad_politecnica_de_madrid_logo.jfif" alt="UPM">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">MSc Data Science</span>
+                                <span class="about-sidebar-sub">UPM Madrid <span class="about-sidebar-year">(2021-22)</span></span>
+                            </div>
+                        </div>
+                        <div class="about-sidebar-item">
+                            <img src="education/adh.jfif" alt="UAH">
+                            <div class="about-sidebar-info">
+                                <span class="about-sidebar-title">BSc Computer Science</span>
+                                <span class="about-sidebar-sub">Universidad de Alcalá <span class="about-sidebar-year">(2017-21)</span></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-text">
                     <div class="about-tab-content" id="personal-tab">
@@ -64,7 +127,7 @@
                     <div class="about-tab-content hidden" id="professional-tab">
                         <h1>Professional</h1>
                         <p>I'm a Data Architect and Entrepreneur with a focus on building data products that solve real problems at scale. Currently, I lead CloudClerk as CEO, where we're building BigQuery cost monitoring and optimization tools — combining 5+ years of big data experience with AI agents to help teams gain observability and reduce costs.</p>
-                        <p>In parallel, I'm part of the founding team at Numia, where I serve as Data Lead processing over 50TB of blockchain data for the Cosmos ecosystem. Our analytics products are used by major foundations including DYDX, Celestia, and Cosmoshub. I also co-founded Orbital, a venture studio exploring AI agents within complex systems through consulting and applied research.</p>
+                        <p>In parallel, I'm part of the founding team at Numia, where I serve as Data Lead, processing petabytes of real-time blockchain data. Our analytics products are used by major foundations including DYDX, Celestia, and Cosmoshub. I've also recently co-founded Orbital, a venture studio exploring AI agents within complex systems through consulting and applied research.</p>
                         <p>My technical foundation is rooted in BigQuery, ClickHouse, Python, TypeScript, and cloud infrastructure (primarily Google Cloud). I approach problems through system-based development and layered context — breaking down complexity into manageable, interconnected layers that can scale independently.</p>
                         <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University (Finland), graduating with a 9.2 GPA. Before that, I earned my Bachelor's in Computer Science Engineering from Universidad de Alcalá. My thesis focused on blockchain data analytics, which directly led to my work at Numia.</p>
                         <p>Across my ventures, I've helped generate over $2M in revenue, reached more than 150,000 individual users, and served over 50 client businesses. I believe in building products that are technically excellent and genuinely useful — no shortcuts, no fluff.</p>
@@ -85,6 +148,14 @@
                     content.classList.add('hidden');
                 });
                 document.getElementById(tabName + '-tab').classList.remove('hidden');
+
+                document.querySelectorAll('.professional-only').forEach(el => {
+                    if (tabName === 'professional') {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                });
             });
         });
     </script>

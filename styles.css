@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.professional-only.hidden {
+  display: none;
+}
+
 :root {
   --color-bg: #ffffff;
   --color-surface: #fafafa;
@@ -91,6 +95,8 @@ h3 {
 /* Header & Navigation */
 .header {
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
   background: var(--color-bg);
   z-index: 1000;
   border-bottom: 1px solid var(--color-border);
@@ -1666,6 +1672,83 @@ section {
   margin-top: 0;
 }
 
+.about-cv-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  background: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-cv-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.about-sidebar-section {
+  margin-top: 1rem;
+}
+
+.about-sidebar-section h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 0.5rem;
+}
+
+.about-sidebar-item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.about-sidebar-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.about-sidebar-sub {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.about-sidebar-year {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
 .about-text h1 {
   margin-bottom: 1.5rem;
 }
@@ -1688,7 +1771,16 @@ section {
   }
 
   .about-left {
-    width: 200px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about-sidebar-section {
+    text-align: left;
+  }
+
+  .about-sidebar-item {
+    justify-content: flex-start;
   }
 }
 
