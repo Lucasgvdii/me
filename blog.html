@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaffolding AI - Lucas García de Viedma Pérez</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Articles on data architecture, AI context, building startups, and lessons from scaling data products.">
+    <meta name="author" content="Lucas García de Viedma Pérez">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+    <link rel="manifest" href="assets/logo/site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .blog-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+        .blog-section .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .blog-section .section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+        .blog-section .section-subheader {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-style: italic;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+        }
+        .blog-section .section-desc {
+            font-size: 16px;
+            color: var(--color-text-muted);
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        .blog-card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            transition: transform var(--transition), box-shadow var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            opacity: 1;
+        }
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: var(--color-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .blog-card-placeholder {
+            font-size: 48px;
+            opacity: 0.15;
+        }
+        .blog-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card-series {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .blog-card-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+        .blog-card-content p {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .blog-card-date {
+            font-size: 12px;
+            color: var(--color-text-muted);
+        }
+        .blog-card-read {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 768px) {
+            .blog-section { padding: 3rem 1.5rem 4rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="assets/logo/ico.svg" alt="Logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ventures.html">Ventures & Projects</a></li>
+                <li><a href="about_me.html">About me</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-fade-in">
+        <section class="blog-section">
+            <div class="section-header">
+                <h2>Scaffolding AI</h2>
+                <p class="section-subheader">A practitioner's guide to building AI that works <span style="color: #e74c3c;">in production</span></p>
+                <p class="section-desc">AI is more and more embedded in how we work, build, and think every day. Rather than treating it as a black box, we try to understand its mechanics, adapt to where it's heading, and push it as far as it can go. This blog is a record of that path — the concepts we learn, the patterns we find, and the lessons worth sharing for anyone on a similar journey.</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Article: What is Context -->
+                <a href="articles/0_what_is_context.html" class="blog-card">
+                    <div class="blog-card-image">
+                        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="width: 200px; height: auto;">
+                            <circle cx="108" cy="95" r="72" fill="rgba(26,26,26,0.06)" stroke="#1a1a1a" stroke-width="1.2"/>
+                            <circle cx="192" cy="95" r="72" fill="rgba(26,26,26,0.06)" stroke="#1a1a1a" stroke-width="1.2"/>
+                            <circle cx="150" cy="167" r="72" fill="rgba(26,26,26,0.06)" stroke="#1a1a1a" stroke-width="1.2"/>
+                            <clipPath id="cr"><circle cx="108" cy="95" r="72"/></clipPath>
+                            <clipPath id="cs"><circle cx="192" cy="95" r="72"/></clipPath>
+                            <g clip-path="url(#cr)"><g clip-path="url(#cs)">
+                                <circle cx="150" cy="167" r="72" fill="rgba(231,76,60,0.18)"/>
+                            </g></g>
+                            <g clip-path="url(#cr)"><g clip-path="url(#cs)">
+                                <circle cx="150" cy="167" r="72" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="3 2"/>
+                            </g></g>
+                            <text x="80" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">Right</text>
+                            <text x="220" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">Specific</text>
+                            <text x="150" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">Necessary</text>
+                            <text x="150" y="123" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#e74c3c">Context</text>
+                        </svg>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-series">Scaffolding AI &middot; Part 1</div>
+                        <h3>What is context and how do you eat it?</h3>
+                        <p>Why AI struggles with complexity, how context shapes intelligence, and what puzzles teach us about sharing the right knowledge.</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-card-date">February 2026</span>
+                            <span class="blog-card-read">Read article &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

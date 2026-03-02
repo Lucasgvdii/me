@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What context means for AI, why it matters, and how to provide the right amount. A practical introduction using the puzzle analogy.">
+<title>What is Context and How Do You Eat It?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  /* Override site accent for article red highlights */
+  .article { --color-accent: #e74c3c; }
+
+  /* ── Article hero (namespaced to avoid styles.css collision) ── */
+  .article-hero {
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+  }
+  .article-hero .article-hero-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+  }
+  .article-hero .article-hero-subtitle {
+    font-size: 18px;
+    color: var(--color-text-muted);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Article ── */
+  .article {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+  }
+  .article > p,
+  .article > .section-header,
+  .article > .definition,
+  .article > .closer {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article p.drop-cap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.4em;
+    float: left;
+    line-height: 0.8;
+    margin: 0.06em 0.12em 0 0;
+    color: var(--color-text);
+  }
+
+  /* ── Section headers ── */
+  .section-header {
+    margin: 4rem 0 2rem;
+    position: relative;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .section-header .section-number {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .section-divider {
+    width: 40px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 2px;
+    margin-top: 1rem;
+  }
+
+  /* ── Blockquote (context definition) ── */
+  .definition {
+    border-left: 3px solid var(--color-text);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--color-cream);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  /* ── Diagrams ── */
+  .diagram-wrapper {
+    margin: 3rem auto;
+    max-width: 860px;
+    padding: 2.5rem 2rem;
+    background: transparent;
+    position: relative;
+  }
+  .diagram-wrapper .diagram-title {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .diagram-wrapper .diagram-insight {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  .diagram-wrapper .diagram-insight strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ── Venn diagram ── */
+  .venn-wrapper {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .venn-svg {
+    width: 100%;
+    display: block;
+  }
+
+  /* ── Context window diagram ── */
+  .window-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .window-comparison {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .window-scenario { flex: 1; }
+  .window-scenario-label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+  .window-frame {
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    background: #f9f6f1;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .window-header {
+    background: #1a1a1a;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 4px 8px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+  }
+  .window-seg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .window-seg span { position: relative; z-index: 1; text-shadow: 0 0 4px rgba(255,255,255,0.8); }
+  .window-good .seg-ctx  { background: #1a1a1a; color: white; height: 70px; }
+  .window-good .seg-int  { background: #d1d5db; color: #1a1a1a; height: 35px; }
+  .window-good .seg-free { background: #f0ece7; color: #6b7280; height: 109px; border-bottom: 1px dashed rgba(0,0,0,0.12); }
+  .window-bad .seg-ctx   { background: #1a1a1a; color: white; height: 30px; }
+  .window-bad .seg-noise { background: var(--color-accent); color: white; height: 60px; }
+  .window-bad .seg-int   { background: #d1d5db; color: #1a1a1a; height: 80px; }
+  .window-bad .seg-free  { background: #f0ece7; color: #6b7280; height: 44px; border-bottom: 1px dashed rgba(0,0,0,0.12); }
+  .window-limit {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    border-top: 2px dashed var(--color-accent);
+    z-index: 2;
+  }
+  .window-limit-label {
+    position: absolute;
+    top: 22px;
+    right: 4px;
+    font-size: 9px;
+    color: var(--color-accent);
+    font-weight: 600;
+    z-index: 3;
+  }
+  .window-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .window-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--color-text-muted);
+  }
+  .window-legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+  @media (max-width: 768px) {
+    .window-comparison { flex-direction: column; align-items: center; }
+    .window-scenario { max-width: 260px; width: 100%; }
+  }
+
+  /* ── Closer ── */
+  .closer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .closer p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── Article nav (match venture-page layout) ── */
+  .article-bottom-nav {
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+
+  /* ── Scroll animations ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .article-hero { padding: 4rem 1.5rem 3rem; }
+    .article { padding: 1.5rem 1.5rem 4rem; }
+    .diagram-wrapper { margin: 2.5rem 0; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ SITE HEADER ════════ -->
+<header class="header">
+  <nav class="nav">
+    <a href="../index.html" class="logo"><img src="../assets/logo/ico.svg" alt="Logo"></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../ventures.html">Ventures & Projects</a></li>
+      <li><a href="../about_me.html">About me</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page-fade-in">
+
+<!-- ════════ NAV ROW ════════ -->
+<div class="venture-page">
+  <div class="venture-nav-row">
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+  </div>
+  <div class="venture-sibling-nav">
+    <span class="venture-sibling-link" style="visibility: hidden;">&larr;</span>
+    <!-- <a href="1_next_article.html" class="venture-sibling-link">Next: Article title &rarr;</a> -->
+  </div>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section class="article-hero">
+  <div class="article-hero-label">Scaffolding AI &middot; Part 1</div>
+  <h1>What is context and how do you eat it?</h1>
+  <p class="article-hero-subtitle">About our blindness to complexity and why AI struggles with it.</p>
+</section>
+
+<article class="article">
+
+  <!-- ════════ SECTION 1: Complex vs hard ════════ -->
+  <div class="section-header reveal">
+    <span class="section-number">01</span>
+    <h2>Complex vs hard</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <p class="drop-cap reveal">One of my favorite definitions of intelligence is that it&rsquo;s the ability to resolve complex problems. However, it is often confused with &ldquo;the ability to resolve hard problems&rdquo;. Hard implies difficulty, while complex means that it involves multiple interconnected parts.</p>
+
+  <p class="reveal">Although complex problems are in general difficult and hard problems are often complex, I find it necessary to emphasize that complex is the right word. Lifting a 30kg weight with a hand is hard but not complex. Cooking rice in a pot is not necessarily hard (though one could argue it is), but it is certainly complex if we think about all the elements that take part in doing so.</p>
+
+  <p class="reveal">It is very likely that you never pay attention to all the utensils, steps or strategies involved in day-to-day activities, and that&rsquo;s absolutely normal. Because our life requires a continuous interaction with an environment of almost infinite complexity, we have evolved to automatically internalize complex situations until they feel trivial.</p>
+
+  <p class="reveal">Our set of tools &mdash; which is hard to enumerate &mdash; allows us to observe, form assumptions, validate them and extract patterns from our conclusions. Unconsciously, every new pattern becomes part of the unknown structure in which we organize information in our heads, and is then available when we face a new situation in which it might be useful.</p>
+
+  <p class="reveal">Doing this over and over, at an unimaginable speed and with little control, is how we handle incredibly well both known and new complexity.</p>
+
+  <!-- ── COOKING RICE DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div class="diagram-title">Cooking rice &mdash; a seemingly simple task</div>
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 540 390" style="max-width:480px;width:100%;font-family:'Inter',system-ui,sans-serif;">
+
+        <!-- Dashed boundary circle -->
+        <circle cx="270" cy="195" r="72" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+
+        <!-- Connecting lines -->
+        <g stroke="#d1d5db" stroke-width="1">
+          <line x1="270" y1="123" x2="270" y2="52"/>
+          <line x1="312" y1="137" x2="355" y2="78"/>
+          <line x1="338" y1="173" x2="408" y2="150"/>
+          <line x1="338" y1="217" x2="408" y2="240"/>
+          <line x1="312" y1="253" x2="355" y2="312"/>
+          <line x1="270" y1="267" x2="270" y2="340"/>
+          <line x1="228" y1="253" x2="185" y2="312"/>
+          <line x1="202" y1="217" x2="132" y2="240"/>
+          <line x1="202" y1="173" x2="132" y2="150"/>
+          <line x1="228" y1="137" x2="185" y2="78"/>
+        </g>
+
+        <!-- Dots at outer endpoints -->
+        <g fill="#1a1a1a">
+          <circle cx="270" cy="50" r="3"/>
+          <circle cx="357" cy="76" r="3"/>
+          <circle cx="410" cy="149" r="3"/>
+          <circle cx="410" cy="241" r="3"/>
+          <circle cx="357" cy="314" r="3"/>
+          <circle cx="270" cy="342" r="3"/>
+          <circle cx="183" cy="314" r="3"/>
+          <circle cx="130" cy="241" r="3"/>
+          <circle cx="130" cy="149" r="3"/>
+          <circle cx="183" cy="76" r="3"/>
+        </g>
+
+        <!-- Central pot illustration -->
+        <g>
+          <!-- pot body -->
+          <rect x="244" y="185" width="52" height="32" rx="4" fill="#f0ece7" stroke="#1a1a1a" stroke-width="1.4"/>
+          <!-- pot rim -->
+          <rect x="240" y="179" width="60" height="8" rx="2" fill="#e0d8ce" stroke="#1a1a1a" stroke-width="1.4"/>
+          <!-- handles -->
+          <line x1="240" y1="200" x2="232" y2="200" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="300" y1="200" x2="308" y2="200" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- steam wisps -->
+          <path d="M258 175 Q256 165 260 157" stroke="#c0b8ae" stroke-width="1.1" fill="none"/>
+          <path d="M270 173 Q268 163 272 155" stroke="#c0b8ae" stroke-width="1.1" fill="none"/>
+          <path d="M282 175 Q280 165 284 157" stroke="#c0b8ae" stroke-width="1.1" fill="none"/>
+          <!-- flame/heat -->
+          <path d="M252 221 Q256 227 260 221 Q264 227 268 221 Q272 227 276 221 Q280 227 284 221 Q288 227 292 221" stroke="#e74c3c" stroke-width="1.2" fill="none" opacity="0.55"/>
+        </g>
+
+        <!-- Labels -->
+        <g font-size="12" font-weight="600" fill="#374151">
+          <text x="270" y="42" text-anchor="middle">Water</text>
+          <text x="364" y="80" text-anchor="start">Rice</text>
+          <text x="418" y="153" text-anchor="start">Pot</text>
+          <text x="418" y="245" text-anchor="start">Lid</text>
+          <text x="364" y="318" text-anchor="start">Heat source</text>
+          <text x="270" y="360" text-anchor="middle">Temperature</text>
+          <text x="176" y="318" text-anchor="end">Time</text>
+          <text x="122" y="245" text-anchor="end">Water ratio</text>
+          <text x="122" y="153" text-anchor="end">Rinsing</text>
+          <text x="176" y="80" text-anchor="end">Resting</text>
+        </g>
+
+      </svg>
+    </div>
+  </div>
+
+  <p class="reveal">Built to our image, Artificial Intelligence (AI) is certainly able to handle complexity too, but with some nuances. While our strength relies on how we are able to autonomously interact with the environment and iteratively increase our knowledge &mdash; AI comes with a built-in knowledge base that allows it to handle complexity from the get go, but it is limited both in its interaction toolkit and in the integration of new information.</p>
+
+  <p class="reveal">If you have played around with the latest AI agents, I&rsquo;m sure you have been both amazed at its capability to answer and reason about general knowledge information &mdash; and by general I mean that it can be found on the internet, not that everyone knows it &mdash; and frustrated when it was unable to help you resolve a task in which different systems, tools or topics were involved. Remember complexity?</p>
+
+  <p class="reveal">Don&rsquo;t get me wrong. AI can handle complexity. It just can&rsquo;t handle ALL the complexity out of the box. The same way you&rsquo;d not expect someone without experience in a certain task to solve instantly and in the best way, we can not expect AI to automatically do so. It simply does not have the &ldquo;full context&rdquo;.</p>
+
+  <blockquote class="definition reveal">
+    Context: subset of information required to understand certain situation, statement, environment or idea and make decisions based on it.
+  </blockquote>
+
+  <!-- ======== SECTION 2: Untrivializing communication ======== -->
+  <div class="section-header reveal">
+    <span class="section-number">02</span>
+    <h2>Untrivializing communication</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <p class="reveal">Amazing! Then we just need to provide our AI with the context it needs, right?</p>
+
+  <p class="reveal">While context has a very clear definition, it has a property that makes it very hard to share effectively. It&rsquo;s completely subjective.</p>
+
+  <p class="reveal">Our previous knowledge, our strengths and weaknesses affect our perception of every piece of information that we gather from an environment. Even if two people with very similar backgrounds read this article, they would very likely differ in the way they explained it to a friend.</p>
+
+  <p class="reveal">This is not just due to our nature. Context is everything and nothing at the same time. It is the color of this website, it is the style of writing, it is how you got to this article. In the end, context is information, and information is how we perceive the world. We could perfectly dive into philosophy here, but let&rsquo;s try to go back to the topic.</p>
+
+  <p class="reveal">Despite this subjectiveness, we are constantly sharing context. We do it at work, at home, with friends &mdash; it just feels natural. However, communication is one of these infinitely complex things that we have learnt to trivialize. The reason why communication is so complex is because when shared, context becomes DOUBLE subjective.</p>
+
+  <!-- ── SAME ARTICLE DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div class="diagram-title">Same article, different understanding</div>
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 420 162" style="max-width:420px;width:100%;font-family:'Inter',system-ui,sans-serif;">
+        <text x="95" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Person A</text>
+        <rect x="35" y="22" width="120" height="118" rx="5" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="46" y="44" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="46" y="68" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="46" y="116" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="50" y="32" width="55" height="4" rx="1" fill="#9ca3af"/>
+        <rect x="50" y="48" width="88" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="60" width="72" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="72" width="82" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="84" width="92" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="96" width="68" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="108" width="78" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="50" y="120" width="50" height="3" rx="1" fill="#d1d5db"/>
+        <text x="210" y="72" text-anchor="middle" font-size="10" fill="#9ca3af" font-weight="600">same</text>
+        <text x="210" y="85" text-anchor="middle" font-size="10" fill="#9ca3af" font-weight="600">article</text>
+        <line x1="155" y1="80" x2="190" y2="80" stroke="#e5e7eb" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <line x1="230" y1="80" x2="265" y2="80" stroke="#e5e7eb" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="325" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Person B</text>
+        <rect x="265" y="22" width="120" height="118" rx="5" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="276" y="56" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="276" y="80" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="276" y="92" width="98" height="11" rx="2" fill="rgba(231,76,60,0.13)"/>
+        <rect x="280" y="32" width="55" height="4" rx="1" fill="#9ca3af"/>
+        <rect x="280" y="48" width="88" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="60" width="72" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="72" width="82" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="84" width="92" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="96" width="68" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="108" width="78" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="280" y="120" width="50" height="3" rx="1" fill="#d1d5db"/>
+        <text x="210" y="156" text-anchor="middle" font-size="9" fill="#9ca3af" font-style="italic">Different lines resonate with different readers</text>
+      </svg>
+    </div>
+  </div>
+
+  <p class="reveal">We used this article before to exemplify that two individuals might infer different insights from it. It was treated as a one-way process, but in reality I am writing it based on my perceptions too. I am giving relevance to topics I believe useful for an introduction to using AI, assuming a certain knowledge base from the readers, and even writing it in a way I believe could be enjoyable to read.</p>
+
+  <p class="reveal">However, the way you interpret this is completely out of my control. It will be both the collision of our knowledge and perceptions that will determine the utility, enjoyment or the learnings you extract from the text and its context. This is precisely why in the same class two students learn at different paces, or why requirements shared in a work meeting are not equally clear for every employee.</p>
+
+  <p class="reveal">This opens the gate to the concepts of bad and good context. If the information that we gave was sufficient to portray the scenario to our counterparts in the way we wanted it would be good context. If it was not, we probably gave them bad context. This is certainly not a black and white science, but rather a scale of greys.</p>
+
+  <p class="reveal">In general we don&rsquo;t give this much of a thought because of our inherent toolkit to deal with complexity. When we speak, we try to estimate what our counterpart knows and focus on providing the information we believe they need. When we listen, we use all our knowledge to interpret what we are being told and if it&rsquo;s not enough we ask, research or feel through our senses.</p>
+
+  <p class="reveal">However, due to laziness, bad estimations on others&rsquo; previous knowledge, or other reasons, there are a lot of cases where we give others bad context, forcing them to take action.</p>
+
+  <!-- ── "HERE!" DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 440 155" style="max-width:420px;width:100%;font-family:'Inter',system-ui,sans-serif;">
+        <rect x="20" y="52" width="192" height="82" rx="4" fill="#fafaf8" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="228" y="52" width="192" height="82" rx="4" fill="#fafaf8" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="212" y="48" width="16" height="90" rx="2" fill="#d1d5db"/>
+        <text x="116" y="144" text-anchor="middle" font-size="8" fill="#c0b8ae" letter-spacing="0.06em">KITCHEN</text>
+        <text x="324" y="144" text-anchor="middle" font-size="8" fill="#c0b8ae" letter-spacing="0.06em">BEDROOM</text>
+        <circle cx="116" cy="93" r="14" fill="#f0ece7" stroke="#1a1a1a" stroke-width="1.4"/>
+        <text x="116" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1a1a">A</text>
+        <circle cx="324" cy="93" r="14" fill="#f0ece7" stroke="#1a1a1a" stroke-width="1.4"/>
+        <text x="324" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1a1a">B</text>
+        <rect x="40" y="8" width="132" height="28" rx="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+        <polygon points="102,35 112,48 116,35" fill="white"/>
+        <line x1="102" y1="35" x2="112" y2="48" stroke="#1a1a1a" stroke-width="1"/>
+        <line x1="112" y1="48" x2="116" y2="35" stroke="#1a1a1a" stroke-width="1"/>
+        <text x="106" y="27" text-anchor="middle" font-size="11" fill="#1a1a1a">Where are you?</text>
+        <rect x="286" y="8" width="70" height="28" rx="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+        <polygon points="318,35 324,48 328,35" fill="white"/>
+        <line x1="318" y1="35" x2="324" y2="48" stroke="#1a1a1a" stroke-width="1"/>
+        <line x1="324" y1="48" x2="328" y2="35" stroke="#1a1a1a" stroke-width="1"/>
+        <text x="321" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#e74c3c">Here!</text>
+        <text x="144" y="82" font-size="16" font-weight="700" fill="#e74c3c">?</text>
+      </svg>
+    </div>
+  </div>
+
+  <p class="reveal">AI has three particularities that differentiate it from us in this regard.</p>
+
+  <p class="reveal">First of all, it is not autonomous to decide to learn something, or to do anything in reality &mdash; in other words, it is not alive. This means that even if we gave it bad context, the AI won&rsquo;t have an interest in deepening in the topic we shared when it is not interacting with us.</p>
+
+  <p class="reveal">Secondly, it does not have the necessary tools to explore the environment out of the box. Even if it thinks the information that we gave is not sufficient, its only way of obtaining more information is from the interaction with the user.</p>
+
+  <p class="reveal">Lastly, once an AI model has been trained its &ldquo;brain&rdquo; and knowledge are fixed. Every interaction that we have with it will start from ground zero, as if we were rewinding all past conversations. Only during a conversation it is able to keep in mind the context that is being shared with it.</p>
+
+  <p class="reveal">These differences make the effects of bad context much worse, because AI can&rsquo;t compensate for it like humans do. We will later also show that they bring some opportunities, but let&rsquo;s focus on the fact that we really need to provide our agents with good context.</p>
+
+  <!-- ======== SECTION 3: Quality vs quantity ======== -->
+  <div class="section-header reveal">
+    <span class="section-number">03</span>
+    <h2>Quality vs quantity</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <p class="reveal">Since we want to make sure we only give good context to AI, let&rsquo;s dig deeper into what truly makes context good or bad. Not on the result &mdash; we already said that the context is good if it allows us to transfer the information that we want to another person &mdash; but on the variables that make this possible.</p>
+
+  <p class="reveal">Context quality depends on three variables: being right, necessary and specific.</p>
+
+  <p class="reveal"><strong>Right</strong> refers to the truthfulness of what is being shared. If the information is incorrect, everything else does not matter. It is closely tied to how well the &ldquo;sender&rdquo; understands the topic.</p>
+
+  <p class="reveal"><strong>Necessary</strong> refers to what must be included to properly understand and act. It is not about what the sender thinks is necessary, but on what is actually relevant for the receiver.</p>
+
+  <p class="reveal"><strong>Specific</strong> refers to the level of precision in what is shared. Vague information leaves too much room for interpretation.</p>
+
+  <!-- ── VENN DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div class="diagram-title">What makes context useful?</div>
+    <div class="venn-wrapper">
+      <svg class="venn-svg" viewBox="0 0 500 430" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="180" cy="155" r="120" fill="rgba(26, 26, 26, 0.06)" stroke="#1a1a1a" stroke-width="1.5"/>
+        <circle cx="320" cy="155" r="120" fill="rgba(26, 26, 26, 0.06)" stroke="#1a1a1a" stroke-width="1.5"/>
+        <circle cx="250" cy="275" r="120" fill="rgba(26, 26, 26, 0.06)" stroke="#1a1a1a" stroke-width="1.5"/>
+        <clipPath id="clip-right"><circle cx="180" cy="155" r="120"/></clipPath>
+        <clipPath id="clip-specific"><circle cx="320" cy="155" r="120"/></clipPath>
+        <clipPath id="clip-necessary"><circle cx="250" cy="275" r="120"/></clipPath>
+        <g clip-path="url(#clip-right)"><g clip-path="url(#clip-specific)">
+          <circle cx="250" cy="275" r="120" fill="rgba(231, 76, 60, 0.18)"/>
+        </g></g>
+        <g clip-path="url(#clip-right)"><g clip-path="url(#clip-specific)">
+          <circle cx="250" cy="275" r="120" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4 3"/>
+        </g></g>
+        <text x="135" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Right</text>
+        <text x="135" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">Correct for the</text>
+        <text x="135" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">problem at hand</text>
+        <text x="365" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Specific</text>
+        <text x="365" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">Precise, not</text>
+        <text x="365" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">vague or generic</text>
+        <text x="250" y="335" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Necessary</text>
+        <text x="250" y="350" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">No more, no less</text>
+        <text x="250" y="364" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">than what's needed</text>
+        <text x="250" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#e74c3c">Context</text>
+        <text x="250" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Accurate but</text>
+        <text x="250" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">maybe too much</text>
+        <text x="178" y="238" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Relevant but</text>
+        <text x="178" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">too broad</text>
+        <text x="322" y="238" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Detailed but</text>
+        <text x="322" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">off-topic</text>
+      </svg>
+    </div>
+    <div class="diagram-insight">
+      Good context lives at the intersection: information that is <strong>right</strong> for the problem,
+      <strong>specific</strong> enough to act on, and only what&rsquo;s <strong>necessary</strong> &mdash; nothing more.
+    </div>
+  </div>
+
+  <p class="reveal">The right aspect is often the simplest one. If you are sharing context it is just about stating true facts about the topic at hand. The second one on the other hand is very complex. We already mentioned that context is subjective, and to know what is necessary for the receiver is basically impossible. We can only guess based on our perception of what they know. Finally, specificity lies in between both of them. It is not just about the information, but about the way it is expressed, interpreted. It depends on both the sender and the receiver.</p>
+
+  <p class="reveal">We are not used to actively thinking about this, and it&rsquo;s certainly not easy to do if our counterpart can&rsquo;t complement what we say with what they investigate. Given the lack of exploring tools, one of the first things that comes to mind to address this issue is that we could resort to just sending all the information one could think of about the topic, and rely on the AI to make the right connections. But is more always better?</p>
+
+  <p class="reveal">Given the framing of the question one can easily guess this is not the case. For humans, more information can be detrimental because both our processing capacity and our attention are limited. If we overload someone with information, even if correct, we are diluting the signals that truly matter. Essential elements compete with other less relevant ones, making it more complicated to distinguish what&rsquo;s relevant.</p>
+
+  <p class="reveal">For AI this is even more important! If you recall, we mentioned that AI has a long term memory &mdash; based on the information it was trained on &mdash; and a short-term memory, which holds the context you share with it but is lost at the end of every conversation. This short term memory is not infinite. In fact, it is delimited by what we call context windows. Each model has one, and it refers to the amount of information that the AI can hold &ldquo;in memory&rdquo; before overflowing.</p>
+
+  <!-- ── CONTEXT WINDOW DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div class="diagram-title">Context window: curated vs cluttered</div>
+    <div class="window-card">
+      <div class="window-comparison">
+        <!-- Good scenario -->
+        <div class="window-scenario">
+          <div class="window-scenario-label">Curated context</div>
+          <div class="window-frame window-good">
+            <div class="window-header">CONTEXT WINDOW</div>
+            <div class="window-seg seg-free"><span>Room to work</span></div>
+            <div class="window-seg seg-int"><span>Interaction</span></div>
+            <div class="window-seg seg-ctx"><span>Right &amp; specific context</span></div>
+          </div>
+        </div>
+        <!-- Bad scenario -->
+        <div class="window-scenario">
+          <div class="window-scenario-label">Cluttered context</div>
+          <div class="window-frame window-bad">
+            <div class="window-header">CONTEXT WINDOW</div>
+            <div class="window-seg seg-free"><span>Little room left</span></div>
+            <div class="window-seg seg-int"><span>Bloated interaction</span></div>
+            <div class="window-seg seg-noise"><span>Irrelevant noise</span></div>
+            <div class="window-seg seg-ctx"><span>Useful</span></div>
+            <div class="window-limit"></div>
+            <div class="window-limit-label">limit</div>
+          </div>
+        </div>
+      </div>
+      <div class="window-legend">
+        <div class="window-legend-item"><div class="window-legend-swatch" style="background:#1a1a1a;"></div><span>Useful context</span></div>
+        <div class="window-legend-item"><div class="window-legend-swatch" style="background:#e74c3c;"></div><span>Irrelevant noise</span></div>
+        <div class="window-legend-item"><div class="window-legend-swatch" style="background:#d1d5db;"></div><span>Interaction data</span></div>
+        <div class="window-legend-item"><div class="window-legend-swatch" style="background:#f0ece7;border:1px dashed rgba(0,0,0,0.2);"></div><span>Available space</span></div>
+      </div>
+    </div>
+    <div class="diagram-insight">
+      Everything the AI touches fills the window &mdash; useful or not.<br>
+      <strong>Curate what goes in</strong>, or the noise will crowd out the signal.
+    </div>
+  </div>
+
+  <p class="reveal">Once the amount of data surpasses the limits of this window, the information is compressed, often losing a lot of relevant information in the process in exchange for &ldquo;freeing&rdquo; some space for the next interaction. This means that just giving a lot of data to the AI not only has the same effect as in humans of hiding relevant details within a lot of words, but it also fills the context window faster, triggering compaction and damaging the context shared even more.</p>
+
+  <p class="reveal">Just throwing true information is clearly not the right choice, which means that we do need to focus on necessity and specificity.</p>
+
+  <!-- ======== SECTION 4: An expert with Alzheimer's ======== -->
+  <div class="section-header reveal">
+    <span class="section-number">04</span>
+    <h2>An expert with Alzheimer&rsquo;s</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <p class="reveal">A good way of understanding AI is thinking about it as having access to a technical expert &mdash; one who is brilliant in many domains, but suffers from context Alzheimer&rsquo;s. The expert has an enormous amount of knowledge, even more than you at times, but you constantly need to remind him about all the important details he does not have access to immediately.</p>
+
+  <p class="reveal">While inconvenient &mdash; since it&rsquo;d be much better to just have an artificial never forgetting omnipotent expert &mdash; this eternal flow of calling the artificial intelligence, giving it the context for our goal and forgetting everything, simplifies our task. It allows us to correct bad context.</p>
+
+  <p class="reveal">If we share bad context with someone, it is likely that we may even miss the fact that we gave bad context and find the consequences later, once the task is done, or part of it. More importantly, that person may not be able to just dust it off directly and bad context might still affect future endeavors.</p>
+
+  <p class="reveal">AI models, on the other hand, generate a quicker output which clearly shows us the consequences of our poor context. This allows us to iterate on it faster, starting a new conversation but tweaking the initial context to add more, change wording or remove irrelevant elements, until we get the desired result. New interactions will never suffer the consequences of past bad context!</p>
+
+  <!-- ── ITERATIVE REFINEMENT DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div class="diagram-title">Iterating on context</div>
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 560 175" style="max-width:560px;width:100%;font-family:'Inter',system-ui,sans-serif;">
+
+        <!-- ═══ PANEL 1: Original instructions ═══ -->
+        <text x="85" y="10" text-anchor="middle" font-size="9" font-weight="600" fill="#9ca3af" letter-spacing="0.06em">ORIGINAL</text>
+
+        <!-- Document -->
+        <rect x="15" y="16" width="140" height="108" rx="5" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <!-- Title line -->
+        <rect x="28" y="26" width="58" height="4" rx="1" fill="#b0aaaa"/>
+        <!-- 6 grey text lines -->
+        <rect x="28" y="40" width="112" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="28" y="52" width="88" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="28" y="64" width="100" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="28" y="76" width="118" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="28" y="88" width="82" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="28" y="100" width="60" height="3" rx="1" fill="#d1d5db"/>
+
+        <!-- Score badge -->
+        <text x="85" y="138" text-anchor="middle" font-size="8" fill="#9ca3af">Result</text>
+        <rect x="52" y="143" width="66" height="26" rx="13" fill="rgba(231,76,60,0.1)" stroke="rgba(231,76,60,0.25)" stroke-width="0.8"/>
+        <text x="85" y="161" text-anchor="middle" font-size="14" font-weight="700" fill="#e74c3c">3 / 10</text>
+
+        <!-- ─── Arrow 1 ─── -->
+        <line x1="160" y1="68" x2="194" y2="68" stroke="#d1d5db" stroke-width="1.2"/>
+        <path d="M190 64 L197 68 L190 72" stroke="#d1d5db" stroke-width="1.2" fill="none"/>
+
+        <!-- ═══ PANEL 2: First iteration ═══ -->
+        <text x="270" y="10" text-anchor="middle" font-size="9" font-weight="600" fill="#9ca3af" letter-spacing="0.06em">ITERATION 1</text>
+
+        <!-- Document -->
+        <rect x="200" y="16" width="140" height="108" rx="5" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <!-- Title line -->
+        <rect x="213" y="26" width="58" height="4" rx="1" fill="#b0aaaa"/>
+
+        <!-- Line 1: kept -->
+        <rect x="213" y="40" width="112" height="3" rx="1" fill="#d1d5db"/>
+        <!-- Line 2: CROSSED OUT -->
+        <rect x="213" y="52" width="88" height="3" rx="1" fill="#d1d5db" opacity="0.4"/>
+        <line x1="211" y1="53.5" x2="303" y2="53.5" stroke="#e74c3c" stroke-width="1" opacity="0.55"/>
+        <!-- Line 2b: NEW green replacement -->
+        <rect x="213" y="59" width="98" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 3: kept -->
+        <rect x="213" y="69" width="100" height="3" rx="1" fill="#d1d5db"/>
+        <!-- Line 4: CROSSED OUT -->
+        <rect x="213" y="80" width="118" height="3" rx="1" fill="#d1d5db" opacity="0.4"/>
+        <line x1="211" y1="81.5" x2="333" y2="81.5" stroke="#e74c3c" stroke-width="1" opacity="0.55"/>
+        <!-- Line 4b: NEW green replacement -->
+        <rect x="213" y="87" width="90" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 5: kept -->
+        <rect x="213" y="97" width="82" height="3" rx="1" fill="#d1d5db"/>
+        <!-- Line 6: kept -->
+        <rect x="213" y="107" width="60" height="3" rx="1" fill="#d1d5db"/>
+
+        <!-- Score badge -->
+        <text x="270" y="138" text-anchor="middle" font-size="8" fill="#9ca3af">Result</text>
+        <rect x="237" y="143" width="66" height="26" rx="13" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.25)" stroke-width="0.8"/>
+        <text x="270" y="161" text-anchor="middle" font-size="14" font-weight="700" fill="#d97706">6 / 10</text>
+
+        <!-- ─── Arrow 2 ─── -->
+        <line x1="345" y1="68" x2="379" y2="68" stroke="#d1d5db" stroke-width="1.2"/>
+        <path d="M375 64 L382 68 L375 72" stroke="#d1d5db" stroke-width="1.2" fill="none"/>
+
+        <!-- ═══ PANEL 3: Second iteration ═══ -->
+        <text x="455" y="10" text-anchor="middle" font-size="9" font-weight="600" fill="#9ca3af" letter-spacing="0.06em">ITERATION 2</text>
+
+        <!-- Document -->
+        <rect x="385" y="16" width="140" height="108" rx="5" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <!-- Title line -->
+        <rect x="398" y="26" width="58" height="4" rx="1" fill="#b0aaaa"/>
+
+        <!-- Line 1: kept -->
+        <rect x="398" y="40" width="112" height="3" rx="1" fill="#d1d5db"/>
+        <!-- Line 2: green (established from iter 1) -->
+        <rect x="398" y="50" width="98" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 3: CROSSED OUT now -->
+        <rect x="398" y="60" width="100" height="3" rx="1" fill="#d1d5db" opacity="0.4"/>
+        <line x1="396" y1="61.5" x2="500" y2="61.5" stroke="#e74c3c" stroke-width="1" opacity="0.55"/>
+        <!-- Line 3b: NEW green replacement -->
+        <rect x="398" y="67" width="110" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 4: green (established from iter 1) -->
+        <rect x="398" y="77" width="90" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 4b: NEW green addition -->
+        <rect x="398" y="86" width="75" height="3" rx="1" fill="#22c55e" opacity="0.65"/>
+        <!-- Line 5: kept -->
+        <rect x="398" y="96" width="82" height="3" rx="1" fill="#d1d5db"/>
+        <!-- Line 6: kept -->
+        <rect x="398" y="107" width="60" height="3" rx="1" fill="#d1d5db"/>
+
+        <!-- Score badge -->
+        <text x="455" y="138" text-anchor="middle" font-size="8" fill="#9ca3af">Result</text>
+        <rect x="422" y="143" width="66" height="26" rx="13" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.25)" stroke-width="0.8"/>
+        <text x="455" y="161" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">10 / 10</text>
+
+      </svg>
+    </div>
+  </div>
+
+  <p class="reveal">This basically means that AI interaction is a science. You can do A/B tests with context until the result is good enough, no matter the degree of complexity. If you do it enough, and with rigor, it is likely you can allow AI to handle any complexity you want. But this is not trivial, and it is tiring.</p>
+
+  <p class="reveal">We are used to using deterministic tools in which you press a button and you get the expected result, creating a function that receives some data and generates the desired output. Interacting with AI means going from determinism to probabilism. We will try to give the right input and see if we get the output we expect. If we do not, we need to adapt the input but without truly knowing what would be necessary to completely get the desired result.</p>
+
+  <p class="reveal">As we mentioned before, this is basically what we do with human interaction too. However, in this case we are putting over our shoulders all the context responsibility that we often share in conversations. And there is also a differential factor: the speed of results.</p>
+
+  <p class="reveal">In general complex tasks take time. This allows us to iteratively gather context for them, divide them in simpler subtasks, and slowly shift the results as we progress. AI bursts solutions for complex tasks in seconds, forcing us to address them directly &mdash; maybe even without fully understanding the underlying complexity. This is more draining than one would think.</p>
+
+  <!-- ── CONFUSED STICKMAN DIAGRAM ── -->
+  <div class="diagram-wrapper reveal">
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 420 155" style="max-width:420px;width:100%;font-family:'Inter',system-ui,sans-serif;">
+
+        <!-- Equation box 1: 1 + 15 ≠ 16 -->
+        <rect x="15" y="6" width="125" height="32" rx="7" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <text x="77" y="28" text-anchor="middle" font-size="14" fill="#1a1a1a" font-weight="500">1 + 15 <tspan fill="#e74c3c" font-weight="700">≠</tspan> 16</text>
+
+        <!-- Equation box 2: A + J = @ -->
+        <rect x="195" y="6" width="108" height="32" rx="7" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <text x="249" y="28" text-anchor="middle" font-size="14" fill="#1a1a1a" font-weight="500">A + J = <tspan fill="#e74c3c" font-weight="700">@</tspan></text>
+
+        <!-- Ground line -->
+        <line x1="75" y1="148" x2="230" y2="148" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- ─── Stick figure (fallen, trying to get up) ─── -->
+        <!-- Torso (nearly horizontal, upper body slightly raised) -->
+        <line x1="135" y1="120" x2="185" y2="140" stroke="#1a1a1a" stroke-width="2"/>
+
+        <!-- Head (looking up at equations) -->
+        <circle cx="122" cy="105" r="14" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+        <!-- X eyes (confused) -->
+        <line x1="115" y1="100" x2="119" y2="104" stroke="#1a1a1a" stroke-width="1.4"/>
+        <line x1="119" y1="100" x2="115" y2="104" stroke="#1a1a1a" stroke-width="1.4"/>
+        <line x1="125" y1="100" x2="129" y2="104" stroke="#1a1a1a" stroke-width="1.4"/>
+        <line x1="129" y1="100" x2="125" y2="104" stroke="#1a1a1a" stroke-width="1.4"/>
+        <!-- Wavy confused mouth -->
+        <path d="M117 111 Q120 108 123 111 Q126 114 129 111" stroke="#1a1a1a" stroke-width="1.3" fill="none"/>
+
+        <!-- Left arm (propping against ground, pushing up) -->
+        <line x1="148" y1="126" x2="125" y2="148" stroke="#1a1a1a" stroke-width="2"/>
+        <!-- Hand on ground (small line for palm) -->
+        <line x1="122" y1="148" x2="130" y2="148" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+
+        <!-- Right arm (reaching up toward equations) -->
+        <line x1="148" y1="126" x2="158" y2="92" stroke="#1a1a1a" stroke-width="2"/>
+
+        <!-- Left leg (sprawled flat on ground) -->
+        <line x1="185" y1="140" x2="210" y2="148" stroke="#1a1a1a" stroke-width="2"/>
+        <!-- Right leg (bent, knee up) -->
+        <line x1="185" y1="140" x2="195" y2="130" stroke="#1a1a1a" stroke-width="2"/>
+        <line x1="195" y1="130" x2="205" y2="148" stroke="#1a1a1a" stroke-width="2"/>
+
+        <!-- ? above reaching hand -->
+        <text x="163" y="82" text-anchor="middle" font-size="20" font-weight="800" fill="#e74c3c">?</text>
+
+        <!-- Sweat drops -->
+        <ellipse cx="140" cy="96" rx="2.5" ry="3.5" fill="#93c5fd" opacity="0.5"/>
+        <ellipse cx="145" cy="90" rx="2" ry="2.8" fill="#93c5fd" opacity="0.35"/>
+
+        <!-- ─── Energy bar ─── -->
+        <text x="355" y="16" text-anchor="middle" font-size="8" font-weight="700" fill="#9ca3af" letter-spacing="0.08em">ENERGY</text>
+        <!-- Outer casing -->
+        <rect x="336" y="22" width="38" height="108" rx="6" fill="none" stroke="#d1d5db" stroke-width="1.3"/>
+        <!-- Battery cap -->
+        <rect x="347" y="16" width="16" height="6" rx="2" fill="none" stroke="#d1d5db" stroke-width="1.2"/>
+        <!-- Empty segments -->
+        <rect x="341" y="28" width="28" height="16" rx="3" fill="#f5f3f0" stroke="#ebebeb" stroke-width="0.6"/>
+        <rect x="341" y="48" width="28" height="16" rx="3" fill="#f5f3f0" stroke="#ebebeb" stroke-width="0.6"/>
+        <rect x="341" y="68" width="28" height="16" rx="3" fill="#f5f3f0" stroke="#ebebeb" stroke-width="0.6"/>
+        <rect x="341" y="88" width="28" height="16" rx="3" fill="#f5f3f0" stroke="#ebebeb" stroke-width="0.6"/>
+        <!-- Bottom segment: red (critical) -->
+        <rect x="341" y="108" width="28" height="16" rx="3" fill="#e74c3c" opacity="0.85"/>
+        <!-- Downward arrow showing depletion -->
+        <line x1="390" y1="42" x2="390" y2="120" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <path d="M386 116 L390 124 L394 116" stroke="#e74c3c" stroke-width="1.2" fill="none"/>
+
+      </svg>
+    </div>
+  </div>
+
+  <p class="reveal">In the following chapters, if we can call them so, we will explore how we can make this process less tiring and more effective, but I think this is more than enough for an introduction. I hope it was not too dense, but this is not a simple topic. Happy to get any feedback!</p>
+
+  <!-- ── Closer ── -->
+  <div class="closer reveal">
+    <p>See you in the next iteration, and remember, nobody likes being caught&hellip; out of context.</p>
+  </div>
+
+</article>
+
+<!-- ════════ BOTTOM NAV ════════ -->
+<div class="venture-page article-bottom-nav">
+  <div class="venture-sibling-nav">
+    <span class="venture-sibling-link" style="visibility: hidden;">&larr;</span>
+    <a href="../blog.html" class="venture-sibling-link">All posts &rarr;</a>
+  </div>
+</div>
+
+</main>
+
+<!-- ════════ SCRIPTS ════════ -->
+<script>
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -617,14 +617,22 @@ section {
   border-radius: 8px;
   padding: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .projects-grid .venture-content {
   padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 }
 
-.projects-grid .venture-content h3 {
-  margin-top: 0.5em;
+.projects-grid .venture-header {
+  margin-bottom: 0.5rem;
+}
+
+.projects-grid .venture-header h3 {
+  margin-top: 0;
 }
 
 .venture-header {
