@@ -28,14 +28,14 @@
     <link rel="canonical" href="https://yourdomain.com">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
-    <link rel="manifest" href="assets/logo/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/logo/site.webmanifest">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -68,17 +68,17 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="logo"><img src="assets/logo/ico.svg" alt="Logo"></a>
+            <a href="../" class="logo"><img src="../assets/logo/ico.svg" alt="Logo"></a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
             </label>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ventures.html" class="active">Ventures & Projects</a></li>
-                <li><a href="about_me.html">About me</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="../">Home</a></li>
+                <li><a href="../ventures/" class="active">Ventures & Projects</a></li>
+                <li><a href="../about_me/">About me</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../contact/">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -87,7 +87,7 @@
         <section id="ventures" class="ventures">
             <div class="section-header" style="text-align: center;">
                 <h2>Active Ventures & Projects</h2>
-                <p class="section-desc" id="ventures-subtitle">Businesses I have founded or in which I've been part of the founding team</p>
+                <p class="section-desc" id="ventures-subtitle">Businesses I have co-founded</p>
                 <div class="tab-navigation">
                     <button class="tab-btn active" data-tab="ventures">Ventures</button>
                     <button class="tab-btn" data-tab="projects">Projects</button>
@@ -98,14 +98,14 @@
             <div class="tab-content" id="ventures-tab">
                 <div class="ventures-grid">
                     <!-- Numia -->
-                    <div class="venture-card" data-href="ventures/numia.html">
+                    <div class="venture-card" data-href="numia/">
                         <div class="venture-image">
-                            <img src="assets/projects/numiabanner.png" alt="Numia" class="venture-project-img">
+                            <img src="../assets/projects/numiabanner.png" alt="Numia" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-header">
                                 <div class="venture-company-logo">
-                                    <img src="assets/projects/numalgoo.svg" alt="Numia">
+                                    <img src="../assets/projects/numalgoo.svg" alt="Numia">
                                 </div>
                                 <h3>Numia</h3>
                                 <a href="https://numia.xyz/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -116,59 +116,76 @@
                                 <div class="trusted-by-label">Trusted by</div>
                                 <div class="trusted-by-row">
                                     <div class="trusted-by-track">
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/dydx.svg" alt="dYdX"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/interchainfoundation.svg" alt="Interchain Foundation"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/stride.svg" alt="Stride"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/nansen.png" alt="Nansen"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/dune-logo.svg" alt="Dune"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/artemis.svg" alt="Artemis"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/token-terminal.svg" alt="Token Terminal"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/blockpit.svg" alt="Blockpit"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/celestia.png" alt="Celestia"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/neutron.svg" alt="Neutron"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/osmosis.webp" alt="Osmosis"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/dydx.svg" alt="dYdX"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/interchainfoundation.svg" alt="Interchain Foundation"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/stride.svg" alt="Stride"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/nansen.png" alt="Nansen"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/dune-logo.svg" alt="Dune"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/artemis.svg" alt="Artemis"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/token-terminal.svg" alt="Token Terminal"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/blockpit.svg" alt="Blockpit"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/celestia.png" alt="Celestia"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/neutron.svg" alt="Neutron"></span>
-                                        <span class="trusted-by-item"><img src="assets/clients/numia/osmosis.webp" alt="Osmosis"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/dydx.svg" alt="dYdX"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/interchainfoundation.svg" alt="Interchain Foundation"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/stride.svg" alt="Stride"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/nansen.png" alt="Nansen"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/dune-logo.svg" alt="Dune"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/artemis.svg" alt="Artemis"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/token-terminal.svg" alt="Token Terminal"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/blockpit.svg" alt="Blockpit"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/celestia.png" alt="Celestia"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/neutron.svg" alt="Neutron"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/osmosis.webp" alt="Osmosis"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/dydx.svg" alt="dYdX"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/interchainfoundation.svg" alt="Interchain Foundation"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/stride.svg" alt="Stride"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/nansen.png" alt="Nansen"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/dune-logo.svg" alt="Dune"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/artemis.svg" alt="Artemis"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/token-terminal.svg" alt="Token Terminal"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/blockpit.svg" alt="Blockpit"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/celestia.png" alt="Celestia"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/neutron.svg" alt="Neutron"></span>
+                                        <span class="trusted-by-item"><img src="../assets/clients/numia/osmosis.webp" alt="Osmosis"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- CloudClerk -->
-                    <div class="venture-card" data-href="ventures/cloudclerk.html">
+                    <div class="venture-card" data-href="cloudclerk/">
                         <div class="venture-image">
-                            <img src="assets/projects/cloudclerk.png" alt="CloudClerk" class="venture-project-img">
+                            <img src="../assets/projects/cloudclerk.png" alt="CloudClerk" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-header">
                                 <div class="venture-company-logo">
-                                    <img src="assets/projects/cloudclerklogo.png" alt="CloudClerk">
+                                    <img src="../assets/projects/cloudclerklogo.png" alt="CloudClerk">
                                 </div>
                                 <h3>CloudClerk</h3>
                                 <a href="https://www.cloudclerk.ai/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
-                            <p>BigQuery cost monitoring and optimization platform. We leverage over 5 years of experience of big data processing in BigQuery to help teams reduce costs through proper observability tools plus the usage of AI Agents.</p>
+                            <p>Cut your BigQuery bill by up to 60%. CloudClerk gives data teams full visibility into what drives costs and AI-powered recommendations to fix it — no audits, no guesswork, just results.</p>
                         </div>
                     </div>
-                    <!-- Orbital -->
-                    <div class="venture-card" data-href="ventures/orbital.html">
+                    <!-- ObsessionDB -->
+                    <div class="venture-card" data-href="obsessiondb/">
                         <div class="venture-image">
-                            <img src="assets/projects/orbitalbanner.png" alt="Orbital" class="venture-project-img">
+                            <img src="../assets/projects/obsessionbanner.png" alt="ObsessionDB" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-header">
                                 <div class="venture-company-logo">
-                                    <img src="assets/projects/orbital.svg" alt="Orbital">
+                                    <img src="../assets/projects/obsession.png" alt="ObsessionDB">
+                                </div>
+                                <h3>ObsessionDB</h3>
+                                <a href="https://obsessiondb.com/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>Pushing the performance-per-dollar limits of hosted ClickHouse® databases. Optimized infrastructure for teams that need analytical power without the cloud markup.</p>
+                        </div>
+                    </div>
+                    <!-- Orbital -->
+                    <div class="venture-card" data-href="orbital/">
+                        <div class="venture-image">
+                            <img src="../assets/projects/orbitalbanner.png" alt="Orbital" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-header">
+                                <div class="venture-company-logo">
+                                    <img src="../assets/projects/orbital.svg" alt="Orbital">
                                 </div>
                                 <h3>Orbital</h3>
                                 <a href="https://enterorbital.com/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -186,11 +203,11 @@
                     <!-- Token Pulse -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/pulse.png" alt="Token Pulse" class="venture-project-img">
+                            <img src="../assets/projects/pulse.png" alt="Token Pulse" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -199,17 +216,17 @@
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
                             <p>Real time analytics dashboard that allows blockchain foundation teams to track different health and usage KPIs of their governance tokens. Currently used by the DYDX, Celestia and Cosmoshub foundation teams.</p>
-                            <a href="projects/tokenpulse.html" class="venture-read-more">Read more →</a>
+                            <a href="../projects/tokenpulse/" class="venture-read-more">Read more →</a>
                         </div>
                     </div>
                     <!-- NumiaAI -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/nuamiai.jfif" alt="NumiaAI" class="venture-project-img">
+                            <img src="../assets/projects/nuamiai.jfif" alt="NumiaAI" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -218,17 +235,17 @@
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
                             <p>Domain expert chatbot developed to provide support for the trading, reporting and strategy teams of blockchain foundations. Currently used by the DYDX foundation.</p>
-                            <a href="projects/numiaai.html" class="venture-read-more">Read more →</a>
+                            <a href="../projects/numiaai/" class="venture-read-more">Read more →</a>
                         </div>
                     </div>
                     <!-- Data Lenses -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/lenses.jfif" alt="Data Lenses" class="venture-project-img">
+                            <img src="../assets/projects/lenses.jfif" alt="Data Lenses" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -237,17 +254,17 @@
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
                             <p>Analytics dashboard aimed towards showcasing specific blockchain tailored metrics the blockchain foundations want to share with their users. Currently used by the DYDX, Cosmoshub and Osmosis teams.</p>
-                            <a href="projects/datalenses.html" class="venture-read-more">Read more →</a>
+                            <a href="../projects/datalenses/" class="venture-read-more">Read more →</a>
                         </div>
                     </div>
                     <!-- Celestia Data -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/celestia.jfif" alt="Celestia Data" class="venture-project-img">
+                            <img src="../assets/projects/celestia.jfif" alt="Celestia Data" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -256,17 +273,17 @@
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
                             <p>Analytics dashboard aimed towards showcasing specific blockchain tailored metrics the blockchain foundations want to share with their users. Designed only for the Celestia foundation.</p>
-                            <a href="projects/celestiadata.html" class="venture-read-more">Read more →</a>
+                            <a href="../projects/celestiadata/" class="venture-read-more">Read more →</a>
                         </div>
                     </div>
                     <!-- NumiaSQL -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/numiasql.png" alt="NumiaSQL" class="venture-project-img">
+                            <img src="../assets/projects/numiasql.png" alt="NumiaSQL" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -281,11 +298,11 @@
                     <!-- NumiaAPI -->
                     <div class="venture-card">
                         <div class="venture-image">
-                            <img src="assets/projects/apis.jfif" alt="NumiaAPI" class="venture-project-img">
+                            <img src="../assets/projects/apis.jfif" alt="NumiaAPI" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-company-logo">
-                                <img src="assets/employment/numia.jfif" alt="Numia">
+                                <img src="../assets/employment/numia.jfif" alt="Numia">
                             </div>
                             <div class="venture-badge">Active</div>
                             <div class="venture-header">
@@ -302,45 +319,45 @@
                         <div class="venture-content">
                             <div class="venture-badge">Tech Stack</div>
                             <h3>Tools & Technologies</h3>
-                            <p>The technologies I've used day to day to build these data products and scale them.</p>
+                            <p>Preferred tooling to build and scale projects.</p>
                             <div class="techstack-carousels">
                                 <div class="techstack-row">
                                     <div class="techstack-track">
-                                        <span class="techstack-item"><img src="assets/stack/bq.png" alt="">BigQuery</span>
-                                        <span class="techstack-item"><img src="assets/stack/ch.png" alt="">ClickHouse</span>
-                                        <span class="techstack-item"><img src="assets/stack/psql.png" alt="">PostgreSQL</span>
-                                        <span class="techstack-item"><img src="assets/stack/mongo.svg" alt="">MongoDB</span>
-                                        <span class="techstack-item"><img src="assets/stack/tb.png" alt="">TinyBird</span>
-                                        <span class="techstack-item"><img src="assets/stack/bq.png" alt="">BigQuery</span>
-                                        <span class="techstack-item"><img src="assets/stack/ch.png" alt="">ClickHouse</span>
-                                        <span class="techstack-item"><img src="assets/stack/psql.png" alt="">PostgreSQL</span>
-                                        <span class="techstack-item"><img src="assets/stack/mongo.svg" alt="">MongoDB</span>
-                                        <span class="techstack-item"><img src="assets/stack/tb.png" alt="">TinyBird</span>
+                                        <span class="techstack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
+                                        <span class="techstack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
+                                        <span class="techstack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
+                                        <span class="techstack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
+                                        <span class="techstack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
+                                        <span class="techstack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
+                                        <span class="techstack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
+                                        <span class="techstack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
+                                        <span class="techstack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
+                                        <span class="techstack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
                                     </div>
                                 </div>
                                 <div class="techstack-row">
                                     <div class="techstack-track techstack-track-reverse">
-                                        <span class="techstack-item"><img src="assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="assets/stack/looker.png" alt="">Looker</span>
-                                        <span class="techstack-item"><img src="assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="assets/stack/looker.png" alt="">Looker</span>
-                                        <span class="techstack-item"><img src="assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="assets/stack/looker.png" alt="">Looker</span>
+                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
+                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
+                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
+                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
+                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
+                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
+                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
+                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
+                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
                                     </div>
                                 </div>
                                 <div class="techstack-row">
                                     <div class="techstack-track">
-                                        <span class="techstack-item"><img src="assets/stack/python.jfif" alt="">Python</span>
-                                        <span class="techstack-item"><img src="assets/stack/ts.png" alt="">TypeScript</span>
-                                        <span class="techstack-item"><img src="assets/stack/nexjs.png" alt="">Next.js</span>
-                                        <span class="techstack-item"><img src="assets/stack/react.png" alt="">React</span>
-                                        <span class="techstack-item"><img src="assets/stack/python.jfif" alt="">Python</span>
-                                        <span class="techstack-item"><img src="assets/stack/ts.png" alt="">TypeScript</span>
-                                        <span class="techstack-item"><img src="assets/stack/nexjs.png" alt="">Next.js</span>
-                                        <span class="techstack-item"><img src="assets/stack/react.png" alt="">React</span>
+                                        <span class="techstack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
+                                        <span class="techstack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
+                                        <span class="techstack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
+                                        <span class="techstack-item"><img src="../assets/stack/react.png" alt="">React</span>
+                                        <span class="techstack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
+                                        <span class="techstack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
+                                        <span class="techstack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
+                                        <span class="techstack-item"><img src="../assets/stack/react.png" alt="">React</span>
                                     </div>
                                 </div>
                             </div>
@@ -368,9 +385,9 @@
                 // Update subtitle based on selected tab
                 const subtitle = document.getElementById('ventures-subtitle');
                 if (tabName === 'ventures') {
-                    subtitle.textContent = "Businesses I have founded or in which I've been part of the founding team";
+                    subtitle.textContent = "Businesses I have co-founded";
                 } else {
-                    subtitle.textContent = "Live products I've built and are used by customers";
+                    subtitle.textContent = "Live products I've built and are used by customers (besides the core systems of each venture)";
                 }
             });
         });

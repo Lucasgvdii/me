@@ -758,7 +758,7 @@ section {
 }
 
 .venture-read-more {
-  display: inline-block;
+  display: none;
   margin-top: 1rem;
   font-size: 14px;
   font-weight: 500;
