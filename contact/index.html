@@ -78,15 +78,22 @@
         const ENTRY_NAME = 'entry.381919406';
         const ENTRY_EMAIL = 'entry.1108875652';
         const ENTRY_MESSAGE = 'entry.2075910683';
+        const ENTRY_DATE = 'entry.297383893';
 
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const form = e.target;
+            const today = new Date().toISOString().split('T')[0];
             const data = new FormData();
-            data.append(ENTRY_NAME, form.name.value);
-            data.append(ENTRY_EMAIL, form.email.value);
-            data.append(ENTRY_MESSAGE, form.message.value);
+            data.append(ENTRY_NAME, form.elements.namedItem('name').value);
+            data.append(ENTRY_EMAIL, form.elements.namedItem('email').value);
+            data.append(ENTRY_MESSAGE, form.elements.namedItem('message').value);
+            data.append(ENTRY_DATE, today);
+
+            const btn = form.querySelector('.btn-submit');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
 
             fetch(GOOGLE_FORM_URL, {
                 method: 'POST',
@@ -96,8 +103,9 @@
                 form.style.display = 'none';
                 document.getElementById('form-success').style.display = 'block';
             }).catch(function() {
-                form.style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+                alert('Something went wrong. Please try again or reach out on LinkedIn.');
             });
         });
     </script>
