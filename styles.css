@@ -7,7 +7,9 @@
   box-sizing: border-box;
 }
 
-.professional-only.hidden {
+.professional-only.hidden,
+.personal-only.hidden,
+.cv-only.hidden {
   display: none;
 }
 
@@ -285,12 +287,13 @@ h3 {
   display: block;
   font-size: 14px;
   color: var(--color-text-muted);
-  margin-bottom: 0.75rem;
-  margin-top: 76px;
+  margin-bottom: calc(0.75rem - 3px);
+  margin-top: 79px;
 }
 
 .hero-kpis {
   display: flex;
+  justify-content: center;
   gap: 2rem;
   padding: 0.2rem 0;
   margin-bottom: 1.5rem;
@@ -299,6 +302,7 @@ h3 {
 .hero-kpi {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .hero-kpi-number {
@@ -329,7 +333,6 @@ h3 {
   background: transparent;
   border: none;
   border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
   border-radius: 0;
   text-decoration: none;
   color: inherit;
@@ -340,16 +343,23 @@ h3 {
   position: relative;
 }
 
-.hero-card:not(:first-child) {
-  margin-top: -1px;
+.hero-card:last-child {
+  border-bottom: 1px solid var(--color-border);
 }
 
 .hero-card:hover {
   border-top-color: var(--color-text);
-  border-bottom-color: var(--color-text);
   transform: translateX(8px);
   opacity: 1;
   z-index: 1;
+}
+
+.hero-card:hover + .hero-card {
+  border-top-color: var(--color-text);
+}
+
+.hero-card:last-child:hover {
+  border-bottom-color: var(--color-text);
 }
 
 .hero-card-logo {
@@ -426,6 +436,8 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: end;
+  margin-right: -8px;
   opacity: 0.3;
   transition:
     opacity var(--transition),
@@ -1654,9 +1666,14 @@ section {
 }
 
 .about-content {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.about-content::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .about-left {
@@ -1675,10 +1692,35 @@ section {
   object-fit: cover;
 }
 
-.about-tabs {
-  justify-content: center;
-  margin-top: 0;
+/* Floated image inside the Personal text: text wraps around it like in Word */
+.about-image-float {
+  float: left;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin: 0.3rem 2.5rem 1rem 0;
+  shape-outside: margin-box;
 }
+@media (max-width: 768px) {
+  .about-image-float {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Personal-tab paragraphs styling (inherits the muted look the old .about-text p had) */
+.about-content p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+}
+
 
 .about-cv-btn {
   display: inline-block;
@@ -1757,6 +1799,11 @@ section {
   font-size: 0.75rem;
 }
 
+.about-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .about-text h1 {
   margin-bottom: 1.5rem;
 }
@@ -1770,6 +1817,77 @@ section {
 .about-tab-content.hidden {
   display: none;
 }
+
+
+/* About — section divider between Personal and Professional within Personal tab */
+.about-section-divider {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* CV stage: wraps cv-host with same footprint as the CV card so the button can anchor next to it */
+.cv-stage {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* CV download button: stuck to the right side of the CV card, top-aligned */
+.cv-floating-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(calc(100% + 6px));
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.15s, transform 0.15s;
+  z-index: 60;
+  white-space: nowrap;
+}
+.cv-floating-btn:hover {
+  background: #000;
+  transform: translateX(calc(100% + 6px)) translateY(-1px);
+}
+.cv-floating-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Narrow viewports: not enough room for the button beside the CV → fall back to fixed top-right */
+@media (max-width: 1100px) {
+  .cv-floating-btn {
+    position: fixed;
+    top: 24px;
+    right: 16px;
+    transform: none;
+  }
+  .cv-floating-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+.cv-host {
+  display: block;
+  width: 100%;
+  background: transparent;
+}
+
 
 @media (max-width: 768px) {
   .about-content {

@@ -25,7 +25,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="../" class="logo"><img src="../assets/logo/ico.svg" alt="Logo"></a>
+            <a href="../" class="logo"><img src="../assets/logo/android-chrome-192x192.png" alt="Logo"></a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
@@ -42,109 +42,283 @@
 
     <main class="page-fade-in">
         <section class="about-page">
-            <div class="about-content">
-                <div class="about-left">
-                    <div class="about-image">
-                        <img src="../assets/me.jpg" alt="Lucas García de Viedma Pérez">
-                    </div>
-                    <div class="tab-navigation about-tabs">
-                        <button class="tab-btn active" data-tab="personal">Personal</button>
-                        <button class="tab-btn" data-tab="professional">Professional</button>
-                    </div>
-                    <div class="about-sidebar-section professional-only hidden">
-                        <h4>Experience</h4>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/projects/cloudclerklogo.png" alt="CloudClerk">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Co-Founder - CEO</span>
-                                <span class="about-sidebar-sub">CloudClerk <span class="about-sidebar-year">(2025-Present)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/projects/numalgoo.svg" alt="Numia">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Co-Founder - Data Lead</span>
-                                <span class="about-sidebar-sub">Numia <span class="about-sidebar-year">(2024-Present)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/projects/obsession.png" alt="ObsessionDB" style="object-fit:contain;">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Co-Founder</span>
-                                <span class="about-sidebar-sub">ObsessionDB <span class="about-sidebar-year">(2025-Present)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/projects/orbital.svg" alt="Orbital">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Co-Founder - Data Lead</span>
-                                <span class="about-sidebar-sub">Orbital <span class="about-sidebar-year">(2025-Present)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/employment/binary_builders_logo.jfif" alt="Binary Builders">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Data Scientist & Engineer</span>
-                                <span class="about-sidebar-sub">Binary Builders <span class="about-sidebar-year">(2022-24)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/employment/evidence_based_behavior_logo.jfif" alt="EB2">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Software Dev & Data Scientist</span>
-                                <span class="about-sidebar-sub">Evidence Based Behavior <span class="about-sidebar-year">(2020-21)</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-sidebar-section professional-only hidden">
-                        <h4>Education <span class="about-sidebar-year">[9.2 GPA]</span></h4>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/education/aalto_university_logo.jfif" alt="Aalto">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">MSc Data Science</span>
-                                <span class="about-sidebar-sub">Aalto University <span class="about-sidebar-year">(2022-23)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/education/university_of_ljubljana_economics_logo.jfif" alt="Ljubljana">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">Exchange Program</span>
-                                <span class="about-sidebar-sub">University of Ljubljana <span class="about-sidebar-year">(2022)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/education/universidad_politecnica_de_madrid_logo.jfif" alt="UPM">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">MSc Data Science</span>
-                                <span class="about-sidebar-sub">UPM Madrid <span class="about-sidebar-year">(2021-22)</span></span>
-                            </div>
-                        </div>
-                        <div class="about-sidebar-item">
-                            <img src="../assets/education/adh.jfif" alt="UAH">
-                            <div class="about-sidebar-info">
-                                <span class="about-sidebar-title">BSc Computer Science</span>
-                                <span class="about-sidebar-sub">Universidad de Alcalá <span class="about-sidebar-year">(2017-21)</span></span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="section-header" style="text-align: center;">
+                <h2>About me</h2>
+                <p class="section-desc" id="about-subtitle">A bit of who I am</p>
+                <div class="tab-navigation about-tabs">
+                    <button class="tab-btn active" data-tab="personal">Personal</button>
+                    <button class="tab-btn" data-tab="cv">CV</button>
                 </div>
-                <div class="about-text">
-                    <div class="about-tab-content" id="personal-tab">
-                        <h1>About me</h1>
-                        <p>Hey! I'm Lucas, co-founder of CloudClerk, Numia, ObsessionDB, and Orbital. I'm deeply driven by data and complex systems, and I spend most of my time turning one into solutions for the other. I'm a workaholic by nature, which helps when your brain never stops looking for the next problem worth solving.</p>
-                        <p>I'm originally from Spain (Alcalá de Henares), but I've lived and worked across Europe — from a forest outside Helsinki (Finland) to Florence (Italy) and Cannes (France). I operate fluently in Spanish, English, and French.</p>
-                        <p>I'm competitive by design. I hold a red belt in taekwondo (one step away from black, by choice rather than ability), reached the top 2% of League of Legends players worldwide, and now focus that same intensity on bouldering. I also love surfing, though I don't do it as often as I'd like to.</p>
-                        <p>Although now I'm too obsessed with building projects, I've read obsessively. My favorite genre has always been fiction (to name a few of my long-time favorite authors: Dumas, Emilio Salgari, Laura Gallego, and Patrick Rothfuss), although there are many socio-economics-related titles that I'm passionate about.</p>
-                        <p>I really enjoy debating — about anything interesting, from philosophical topics to politics, economics, or even fruit rankings. That aren't many things I enjoy as much as exchanging opinions on topics that aren't simple or don't have a clear answer.</p>
-                    </div>
-                    <div class="about-tab-content hidden" id="professional-tab">
-                        <h1>Professional</h1>
-                        <p>I'm a Data Architect and Entrepreneur with a focus on building data products that solve real problems at scale. Currently, I lead CloudClerk as CEO, where we're building BigQuery cost monitoring and optimization tools — combining 5+ years of big data experience with AI agents to help teams gain observability and reduce costs.</p>
-                        <p>In parallel, I'm co-founder and Data Lead at Numia, processing petabytes of real-time blockchain data. Our analytics products are used by major foundations including DYDX, Celestia, and Cosmoshub. I've also co-founded ObsessionDB, pushing the performance-per-dollar limits of hosted ClickHouse® databases, and Orbital, a venture studio exploring AI agents within complex systems through consulting and applied research.</p>
-                        <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University (Finland), graduating with a 9.2 GPA, and a Bachelor's in Computer Science Engineering.</p>
-                        <p>Across my ventures, I've helped generate over $2M in revenue, reached more than 150,000 individual users, and served over 50 client businesses. I believe in building products that are technically excellent and genuinely useful — no shortcuts, no fluff.</p>
-                    </div>
+            </div>
+
+            <div class="tab-content" id="personal-tab">
+                <div class="about-content">
+                    <img src="../assets/me-square.png" alt="Lucas García de Viedma Pérez" class="about-image-float personal-only">
+                    <p>Hey! I'm Lucas, co-founder of CloudClerk, Numia, ObsessionDB, and Orbital. I'm deeply driven by data and complex systems, and I spend most of my time turning one into solutions for the other. I'm a workaholic by nature, which helps when your brain never stops looking for the next problem worth solving.</p>
+                    <p>I'm originally from Spain (Alcalá de Henares), but I've lived and worked across Europe — from a forest outside Helsinki (Finland) to Florence (Italy) and Cannes (France). I operate fluently in Spanish, English, and French.</p>
+                    <p>I'm competitive by design. I hold a red belt in taekwondo (one step away from black, by choice rather than ability), reached the top 2% of League of Legends players worldwide, and now focus that same intensity on bouldering. I also love surfing, though I don't do it as often as I'd like to.</p>
+                    <p>Although now I'm too obsessed with building projects, I've read obsessively. My favorite genre has always been fiction (to name a few of my long-time favorite authors: Dumas, Emilio Salgari, Laura Gallego, and Patrick Rothfuss), although there are many socio-economics-related titles that I'm passionate about.</p>
+                    <p>I really enjoy debating — about anything interesting, from philosophical topics to politics, economics, or even fruit rankings. That aren't many things I enjoy as much as exchanging opinions on topics that aren't simple or don't have a clear answer.</p>
+                    <p>I'm a Data Architect and Entrepreneur with a focus on building data products that solve real problems at scale. Currently, I lead CloudClerk as CEO, where we're building BigQuery cost monitoring and optimization tools — combining 5+ years of big data experience with AI agents to help teams gain observability and reduce costs.</p>
+                    <p>In parallel, I'm co-founder and Data Lead at Numia, processing petabytes of real-time blockchain data. Our analytics products are used by major foundations including DYDX, Celestia, and Cosmoshub. I've also co-founded ObsessionDB, pushing the performance-per-dollar limits of hosted ClickHouse® databases, and Orbital, a venture studio exploring AI agents within complex systems through consulting and applied research.</p>
+                    <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University (Finland), graduating with a 9.2 GPA, and a Bachelor's in Computer Science Engineering.</p>
+                    <p>Across my ventures, I've helped generate over $2M in revenue, reached more than 150,000 individual users, and served over 50 client businesses. I believe in building products that are technically excellent and genuinely useful — no shortcuts, no fluff.</p>
                 </div>
+            </div>
+
+            <div class="tab-content hidden" id="cv-tab">
+                        <div class="cv-stage">
+                            <button class="cv-floating-btn cv-only hidden" type="button" id="cv-download-btn" aria-label="Download as PDF">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>PDF</span>
+                            </button>
+                            <div id="cv-host" class="cv-host"></div>
+                        </div>
+                        <template id="cv-template">
+                            <link rel="preconnect" href="https://fonts.googleapis.com">
+                            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+                            <style>
+                                :host {
+                                    --ink: #1a1a1a;
+                                    --muted: #555;
+                                    --soft: #888;
+                                    --rule: #e5e5e5;
+                                    --accent: #1a1a1a;
+                                    --bg: #fdfdfb;
+                                    --tag-bg: #f3f1ec;
+                                    display: block;
+                                    background: var(--bg);
+                                    color: var(--ink);
+                                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                                    font-size: 13px;
+                                    line-height: 1.55;
+                                    -webkit-font-smoothing: antialiased;
+                                }
+                                * { box-sizing: border-box; margin: 0; padding: 0; }
+                                .cv { max-width: 880px; margin: 0 auto; background: #fff; padding: 56px 64px; box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.16); border-radius: 4px; }
+                                .cv-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 0; margin-bottom: 8px; }
+                                .cv-header-main { flex: 1; min-width: 0; }
+                                .cv-header h1 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 35px; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; }
+                                .cv-role { font-size: 14px; color: var(--muted); font-weight: 500; letter-spacing: 0.3px; margin-bottom: 0; }
+                                .cv-contact-side { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; text-align: right; font-size: 12px; color: var(--muted); white-space: nowrap; }
+                                .cv-contact-side a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s, color 0.15s; }
+                                .cv-contact-side a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+                                .cv-grid { display: grid; grid-template-columns: 1fr 190px; gap: 40px; }
+                                h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 17px; line-height: 26px; letter-spacing: 0.2px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+                                section { margin-bottom: 28px; }
+                                section:last-child { margin-bottom: 0; }
+                                .summary p { color: var(--muted); line-height: 1.65; font-size: 12.5px; }
+                                .entry { margin-bottom: 18px; }
+                                .entry:last-child { margin-bottom: 0; }
+                                .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 2px; }
+                                .entry-title { font-weight: 600; font-size: 12.5px; color: var(--ink); }
+                                .entry-date { font-size: 11.5px; color: var(--soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+                                .entry-org { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; font-style: italic; }
+                                .entry-bullets { list-style: none; padding: 0; }
+                                .entry-bullets li { position: relative; padding-left: 14px; margin-bottom: 3px; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
+                                .entry-bullets li::before { content: "›"; position: absolute; left: 0; color: var(--soft); font-weight: 600; }
+                                .entry-subs { list-style: none; padding: 0; margin-top: 6px; }
+                                .entry-sub { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 3px 0 3px 14px; position: relative; font-size: 12.5px; color: var(--muted); }
+                                .entry-sub::before { content: "›"; position: absolute; left: 0; color: var(--soft); font-weight: 600; }
+                                .entry-sub .sub-date { color: var(--soft); font-size: 11.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+                                .entry-sub .sub-note { font-size: 11px; color: var(--soft); }
+                                .sidebar h2 { font-size: 14px; line-height: 26px; }
+                                .sidebar h2:has(+ .lang-list), .sidebar h2:has(+ .meta-list), .sidebar h2:has(+ .interests-grid) { margin-bottom: 6px; }
+                                .sidebar-block { margin-bottom: 24px; }
+                                .skill-group { margin-bottom: 12px; }
+                                .skill-group-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--soft); margin-bottom: 6px; }
+                                .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+                                .tag { display: inline-block; padding: 3px 9px; background: var(--tag-bg); border-radius: 3px; font-size: 10.5px; color: var(--ink); font-weight: 500; }
+                                .lang-list, .meta-list { list-style: none; }
+                                .lang-list li, .meta-list li { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; border-bottom: 1px dotted var(--rule); }
+                                .lang-list li:last-child, .meta-list li:last-child { border-bottom: none; }
+                                .lang-list .level, .meta-list .meta-val { color: var(--soft); font-size: 11px; }
+                                .interests-grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; }
+                                .interests-grid li { padding: 4px 0; font-size: 12px; color: var(--muted); border-bottom: 1px dotted var(--rule); }
+                                .interests-grid li:nth-last-child(-n+2) { border-bottom: none; }
+                                @media (max-width: 720px) {
+                                    .cv { padding: 28px 22px; border-radius: 0; }
+                                    .cv-header { flex-direction: column; gap: 18px; }
+                                    .cv-grid { grid-template-columns: 1fr; gap: 24px; }
+                                    .cv-header h1 { font-size: 27px; }
+                                    .cv-contact-side { text-align: left; }
+                                }
+                                @media print {
+                                    :host { background: #fff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+                                    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+                                    .cv { width: 880px !important; max-width: 880px !important; margin: 0 !important; padding: 56px 64px !important; box-shadow: none !important; border-radius: 0 !important; }
+                                    .cv-grid { grid-template-columns: 1fr 190px !important; gap: 40px !important; }
+                                    .cv-header { flex-direction: row !important; gap: 32px !important; }
+                                    .cv-contact-side { text-align: right !important; }
+                                    a { color: var(--ink) !important; }
+                                    .entry, section { page-break-inside: avoid; }
+                                    h2 { page-break-after: avoid; }
+                                    .cv { page-break-after: avoid; page-break-inside: avoid; }
+                                    .tag { background: var(--tag-bg) !important; color: var(--ink) !important; }
+                                }
+                            </style>
+                            <main class="cv">
+                                <header class="cv-header">
+                                    <div class="cv-header-main">
+                                        <h1>Lucas García de Viedma Pérez</h1>
+                                        <div class="cv-role">Co-Founder | Complex Data Systems Engineering &amp; Product Management</div>
+                                    </div>
+                                    <ul class="cv-contact-side">
+                                        <li><a href="mailto:lucas.gvdp@gmail.com">lucas.gvdp@gmail.com</a></li>
+                                        <li><a href="https://www.linkedin.com/in/lucas-garcia-de-viedma-p%C3%A9rez/" target="_blank" rel="noopener">LinkedIn</a></li>
+                                        <li><a href="https://x.com/dataphagus" target="_blank" rel="noopener">X / @dataphagus</a></li>
+                                        <li><a href="https://lucasgvd.eu" target="_blank" rel="noopener">lucasgvd.eu</a></li>
+                                    </ul>
+                                </header>
+                                <section class="summary">
+                                    <h2>Profile</h2>
+                                    <p>Cross-functional lead engineer working at the intersection of business, engineering and product — turning ambiguity into scalable systems, helping customers solve hard problems, and building products that create meaningful impact. Six-plus years across complex data and AI systems: petabyte-scale architectures, product strategy and development, and direct management of institutional clients. Three times on the founding team, over $3M revenue generated, more than 150k end users. Passionate about AI and the boundaries of autonomous agentic workflows in real-world environments. Operate fluently in Spanish, English, and French.</p>
+                                </section>
+                                <div class="cv-grid">
+                                    <div class="main-col">
+                                        <section>
+                                            <h2>Experience</h2>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">Founding Engineer — Data/Cloud Infrastructure Solutions</span>
+                                                    <span class="entry-date">2026 — Now</span>
+                                                </div>
+                                                <div class="entry-org">ObsessionDB</div>
+                                                <ul class="entry-bullets">
+                                                    <li>Working on pushing the limits of managed ClickHouse® performance through a proprietary compute-compute-storage separation layer, paired with a console offering extended functionalities — materialized views backfilling, jobs management, and settings modularity.</li>
+                                                    <li>Designing, building and maintaining CH-KIT — the first open-source drizzle-kit-style tooling for ClickHouse (TypeScript and Python) — a key enabler for large-scale adoption of the technology in serious environments.</li>
+                                                    <li>Serving as Lead Forward Deployed Engineer, working directly with clients to design their data systems through ObsessionDB and its ecosystem, embedding senior expertise where in-house ClickHouse knowledge is scarce.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">Co-Founder — Project Development &amp; Management</span>
+                                                    <span class="entry-date">2025 — Now</span>
+                                                </div>
+                                                <div class="entry-org">CloudClerk</div>
+                                                <ul class="entry-bullets">
+                                                    <li>Building a production-grade product where AI runs the full lifecycle — engineering, design, security, GTM, and operations — as a deliberate test of how far end-to-end AI integration can be pushed today.</li>
+                                                    <li>Continuous BigQuery advanced cost monitoring and optimization without a FinOps hire — averaging +60% reduction in costs and maintenance time across early customer environments.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">Founding Engineer — Lead Forward Deployed Engineer, Data &amp; Product</span>
+                                                    <span class="entry-date">2022 — 2026</span>
+                                                </div>
+                                                <div class="entry-org">Numia</div>
+                                                <ul class="entry-bullets">
+                                                    <li>Managed 15+ institutional clients (i.e. dYdX, Celestia, Nansen, CosmosHub) — figuring out each team's requirements, designing the AI and data solution with them, and shipping it into production. Zero churn across the portfolio, and the close working relationship consistently surfaced upsell opportunities.</li>
+                                                    <li>Built and operated petabyte-scale processing systems across real-time and batch environments (BigQuery, dbt, ClickHouse, Tinybird), owning the architecture end-to-end from ingestion through customer-facing APIs.</li>
+                                                    <li>Designed and shipped 8+ product suites (Python, TypeScript) — from Sybil detection and LLM-based analytics agents to intelligence dashboards and outbound integrations enabling the main crypto data players to consume Numia data.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">Software Developer, Data Scientist</span>
+                                                    <span class="entry-date">2020 — 2021</span>
+                                                </div>
+                                                <div class="entry-org">Evidence Based Behavior (EB2)</div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <h2>Education</h2>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">MSc Data Science, Entrepreneurship and Innovation</span>
+                                                    <span class="entry-date">9.2 GPA</span>
+                                                </div>
+                                                <div class="entry-org">EIT Digital Master School — Double Degree</div>
+                                                <ul class="entry-subs">
+                                                    <li class="entry-sub"><span>Aalto University (Finland)</span><span class="sub-date">2022 — 2023</span></li>
+                                                    <li class="entry-sub"><span>University of Ljubljana (Slovenia) <span class="sub-note">— Exchange, Disruptive Innovation</span></span><span class="sub-date">2022</span></li>
+                                                    <li class="entry-sub"><span>Universidad Politécnica de Madrid (UPM)</span><span class="sub-date">2021 — 2022</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry">
+                                                <div class="entry-head">
+                                                    <span class="entry-title">BSc Computer Science Engineering</span>
+                                                    <span class="entry-date">2017 — 2021</span>
+                                                </div>
+                                                <div class="entry-org">Universidad de Alcalá (UAH)</div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <aside class="sidebar">
+                                        <section class="sidebar-block">
+                                            <h2>Skills</h2>
+                                            <div class="skill-group">
+                                                <div class="skill-group-title">Data and Infra</div>
+                                                <div class="tags">
+                                                    <span class="tag">Real time (ClickHouse, Tinybird)</span>
+                                                    <span class="tag">Batch (BigQuery, dbt)</span>
+                                                    <span class="tag">Cloud (GCP, Docker, Hetzner)</span>
+                                                </div>
+                                            </div>
+                                            <div class="skill-group">
+                                                <div class="skill-group-title">Languages</div>
+                                                <div class="tags">
+                                                    <span class="tag">Python (Dev, Data, ML/DL)</span>
+                                                    <span class="tag">TypeScript (Dev)</span>
+                                                </div>
+                                            </div>
+                                            <div class="skill-group">
+                                                <div class="skill-group-title">Agentic Tooling</div>
+                                                <div class="tags">
+                                                    <span class="tag">Claude Code</span>
+                                                    <span class="tag">Codex</span>
+                                                    <span class="tag">Cursor</span>
+                                                    <span class="tag">Custom harnessing</span>
+                                                </div>
+                                            </div>
+                                            <div class="skill-group">
+                                                <div class="skill-group-title">Soft</div>
+                                                <div class="tags">
+                                                    <span class="tag">Cross-disciplinary ownership</span>
+                                                    <span class="tag">Product &amp; technical strategy</span>
+                                                    <span class="tag">Complex problem solving</span>
+                                                    <span class="tag">Stakeholders management</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="sidebar-block">
+                                            <h2>Languages</h2>
+                                            <ul class="lang-list">
+                                                <li><span>Spanish</span><span class="level">Native</span></li>
+                                                <li><span>English</span><span class="level">C1 CAE</span></li>
+                                                <li><span>French</span><span class="level">B2 DELF</span></li>
+                                            </ul>
+                                        </section>
+                                        <section class="sidebar-block">
+                                            <h2>Main interests</h2>
+                                            <ul class="interests-grid">
+                                                <li>AI</li>
+                                                <li>Finance</li>
+                                                <li>Robotics</li>
+                                                <li>Energy</li>
+                                            </ul>
+                                        </section>
+                                        <section class="sidebar-block">
+                                            <h2>Particularities</h2>
+                                            <ul class="meta-list">
+                                                <li><span>Taekwondo</span><span class="meta-val">Red belt</span></li>
+                                                <li><span>League of Legends</span><span class="meta-val">Top 2%</span></li>
+                                                <li><span>Currently</span><span class="meta-val">Bouldering, surfing</span></li>
+                                            </ul>
+                                        </section>
+                                        <section class="sidebar-block">
+                                            <h2>Lived and worked in</h2>
+                                            <ul class="meta-list">
+                                                <li><span>Spain</span><span class="meta-val">Madrid</span></li>
+                                                <li><span>Finland</span><span class="meta-val">Helsinki</span></li>
+                                                <li><span>Italy</span><span class="meta-val">Florence</span></li>
+                                            </ul>
+                                        </section>
+                                    </aside>
+                                </div>
+                            </main>
+                        </template>
             </div>
         </section>
     </main>
@@ -156,19 +330,100 @@
                 button.classList.add('active');
 
                 const tabName = button.dataset.tab;
-                document.querySelectorAll('.about-tab-content').forEach(content => {
+                document.querySelectorAll('.tab-content').forEach(content => {
                     content.classList.add('hidden');
                 });
                 document.getElementById(tabName + '-tab').classList.remove('hidden');
 
-                document.querySelectorAll('.professional-only').forEach(el => {
-                    if (tabName === 'professional') {
+                const subtitle = document.getElementById('about-subtitle');
+                if (subtitle) {
+                    subtitle.textContent = tabName === 'personal'
+                        ? 'A bit of who I am'
+                        : 'Career summary and highlights';
+                }
+
+                document.querySelectorAll('.cv-only').forEach(el => {
+                    if (tabName === 'cv') {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                });
+                document.querySelectorAll('.personal-only').forEach(el => {
+                    if (tabName === 'personal') {
                         el.classList.remove('hidden');
                     } else {
                         el.classList.add('hidden');
                     }
                 });
             });
+        });
+
+        // Mount the inlined CV template into the about page (Shadow DOM, no fetch)
+        (function mountCV() {
+            const host = document.getElementById('cv-host');
+            const template = document.getElementById('cv-template');
+            if (!host || !template) return;
+            const shadow = host.attachShadow({ mode: 'open' });
+            shadow.appendChild(template.content.cloneNode(true));
+        })();
+
+        // Download as PDF: build a srcdoc iframe with the CV + cv.html's print logic, then auto-print
+        document.getElementById('cv-download-btn').addEventListener('click', () => {
+            const host = document.getElementById('cv-host');
+            const shadow = host && host.shadowRoot;
+            if (!shadow) return;
+
+            const cv = shadow.querySelector('.cv');
+            if (!cv) return;
+
+            // Collect inlined styles from the template, rewriting :host → html, body so they apply at document root
+            const stylesText = Array.from(shadow.querySelectorAll('style'))
+                .map(s => s.textContent.replace(/:host\s*\{/g, 'html, body {'))
+                .join('\n');
+            const linkTags = Array.from(shadow.querySelectorAll('link'))
+                .map(l => l.outerHTML)
+                .join('\n');
+            const cvHTML = cv.outerHTML;
+
+            const docHTML = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+${linkTags}
+<style>${stylesText}</style>
+<style>html,body{margin:0;padding:0;background:#fff;}</style>
+</head><body>
+${cvHTML}
+<script>
+const PRINT_WIDTH_PX = 880;
+window.addEventListener('beforeprint', () => {
+  const cv = document.querySelector('.cv');
+  const grid = cv.querySelector('.cv-grid');
+  const header = cv.querySelector('.cv-header');
+  cv.style.width = PRINT_WIDTH_PX + 'px';
+  cv.style.maxWidth = PRINT_WIDTH_PX + 'px';
+  cv.style.padding = '56px 64px';
+  cv.style.margin = '0';
+  grid.style.gridTemplateColumns = '1fr 190px';
+  grid.style.gap = '40px';
+  header.style.flexDirection = 'row';
+  header.style.gap = '32px';
+  void cv.offsetHeight;
+  const heightPx = cv.offsetHeight;
+  let s = document.getElementById('cv-dyn-page');
+  if (!s) { s = document.createElement('style'); s.id = 'cv-dyn-page'; document.head.appendChild(s); }
+  s.textContent = '@page { size: ' + PRINT_WIDTH_PX + 'px ' + (heightPx + 30) + 'px; margin: 0; }';
+});
+window.addEventListener('load', () => setTimeout(() => { window.focus(); window.print(); }, 250));
+<\/script>
+</body></html>`;
+
+            const f = document.createElement('iframe');
+            f.style.cssText = 'position:fixed;right:-99999px;top:0;width:880px;height:1100px;border:0;opacity:0;';
+            f.srcdoc = docHTML;
+            document.body.appendChild(f);
+
+            // Clean up after the print dialog has had time to render
+            setTimeout(() => f.remove(), 30000);
         });
     </script>
 </body>
