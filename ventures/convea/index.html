@@ -34,13 +34,23 @@
 
     <main class="page-fade-in">
         <article class="venture-page">
-            <div class="venture-nav-row">
-                <a href="../../ventures/" class="back-link">← Back to Ventures</a>
-            </div>
-            <div class="venture-sibling-nav">
-                <a href="../orbital/" class="venture-sibling-link">← Other ventures: Orbital</a>
-                <a href="../numia/" class="venture-sibling-link">Other ventures: Numia →</a>
-            </div>
+            <nav class="venture-breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../">Ventures</a>
+                <span class="breadcrumb-sep">/</span>
+                <div class="breadcrumb-dropdown">
+                    <button class="breadcrumb-current" type="button" aria-haspopup="true" aria-expanded="false">
+                        Convea
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <ul class="breadcrumb-menu">
+                    <li><a href="../numia/"><span>Numia</span></a></li>
+                    <li><a href="../cloudclerk/"><span>CloudClerk</span></a></li>
+                    <li><a href="../obsessiondb/"><span>ObsessionDB</span></a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="venture-title-row">
                 <div class="venture-title-left">
@@ -55,49 +65,106 @@
                 </div>
             </div>
 
-            <div class="venture-role">Co-Founder</div>
+            <div class="venture-role">Co-Founder — Data Lead</div>
 
-            <div class="venture-page-content">
-                <section class="venture-section">
-                    <h2>Unified Analytics for eCommerce</h2>
-                    <p><strong>Convea was an eCommerce analytics platform that consolidated data from sales, marketing, and advertising tools into a single, AI-driven decision layer.</strong></p>
-                    <p>The product was built around the observation that small and mid-sized online businesses operate across a fragmented stack — Shopify, WooCommerce, Meta Ads, Google Ads, TikTok Ads, Klaviyo, Mailchimp, GA4, and several others — where each platform reports its own slice of the truth in its own format. The cost of stitching that data together manually scales with revenue, but the value of doing it well is non-linear: a single well-attributed campaign or well-identified inventory anomaly can fund the entire data effort.</p>
-                </section>
+            <div class="venture-tabs">
+                <button class="venture-tab-btn active" data-vtab="venture">About the venture</button>
+                <button class="venture-tab-btn" data-vtab="role">About my role</button>
+            </div>
 
-                <section class="venture-section">
-                    <h2>What the Platform Did</h2>
-                    <ul class="venture-features">
-                        <li><strong>Cross-platform ingestion</strong> from major sales, marketing, advertising, and CRM tools, normalized into a single eCommerce schema</li>
-                        <li><strong>Attribution and unit economics</strong> at the SKU, campaign, and channel level — built to answer "is this campaign actually profitable?" rather than just "is it spending?"</li>
-                        <li><strong>AI-driven insights</strong> on top of the unified dataset, surfacing anomalies, opportunities, and underperforming campaigns without requiring SQL or BI expertise</li>
-                        <li><strong>Plain-language reporting</strong> aimed at operators and founders rather than analysts, so the data layer was actionable end-to-end</li>
-                    </ul>
-                </section>
+            <div class="venture-tab-content" id="venture-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Unified Analytics for eCommerce</h2>
+                        <p><strong>Convea was an eCommerce analytics platform that consolidated data from sales, marketing, and advertising tools into a single, AI-driven decision layer.</strong></p>
+                        <p>The product was built around the observation that small and mid-sized online businesses operate across a fragmented stack — Shopify, WooCommerce, Meta Ads, Google Ads, TikTok Ads, Klaviyo, Mailchimp, GA4, and several others — where each platform reports its own slice of the truth in its own format. The cost of stitching that data together manually scales with revenue, but the value of doing it well is non-linear: a single well-attributed campaign or well-identified inventory anomaly can fund the entire data effort.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>How It Started</h2>
-                    <p>Convea emerged from direct work with a handful of online retailers who were paying for multiple analytics tools and still ending each month uncertain about which channel actually drove margin. The thesis was simple: pre-built dashboards over fragmented data don't solve the problem; bringing the data together and letting AI explain it in plain language does.</p>
-                    <p>The team built the data backbone first — connectors, schema, attribution model — and only then layered the AI insights and product surface on top. The order mattered: most "AI-driven analytics" products skip the backbone and end up summarizing noise.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>What the Platform Did</h2>
+                        <ul class="venture-features">
+                            <li><strong>Cross-platform ingestion</strong> from major sales, marketing, advertising, and CRM tools, normalized into a single eCommerce schema</li>
+                            <li><strong>Attribution and unit economics</strong> at the SKU, campaign, and channel level — built to answer "is this campaign actually profitable?" rather than just "is it spending?"</li>
+                            <li><strong>AI-driven insights</strong> on top of the unified dataset, surfacing anomalies, opportunities, and underperforming campaigns without requiring SQL or BI expertise</li>
+                            <li><strong>Plain-language reporting</strong> aimed at operators and founders rather than analysts, so the data layer was actionable end-to-end</li>
+                        </ul>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>Why It Was Sunset</h2>
-                    <p>Convea has been wound down as an active product effort. The opportunity remained real, but the team's focus shifted toward larger-scale data infrastructure problems and ventures with higher leverage per hour invested. The site stays live as a reference, and the lessons learned about cross-platform ingestion, attribution at scale, and AI-on-top-of-clean-data carry into the work that followed.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>How It Started</h2>
+                        <p>Convea emerged from direct work with a handful of online retailers who were paying for multiple analytics tools and still ending each month uncertain about which channel actually drove margin. The thesis was simple: pre-built dashboards over fragmented data don't solve the problem; bringing the data together and letting AI explain it in plain language does.</p>
+                        <p>The team built the data backbone first — connectors, schema, attribution model — and only then layered the AI insights and product surface on top. The order mattered: most "AI-driven analytics" products skip the backbone and end up summarizing noise.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>Focus Areas</h2>
-                    <div class="venture-tags">
-                        <span class="venture-tag">eCommerce</span>
-                        <span class="venture-tag">Analytics</span>
-                        <span class="venture-tag">Attribution</span>
-                        <span class="venture-tag">AI-driven Insights</span>
-                        <span class="venture-tag">Marketing Data</span>
-                        <span class="venture-tag">Cross-platform Integration</span>
-                    </div>
-                </section>
+                    <section class="venture-section">
+                        <h2>Why It Was Sunset</h2>
+                        <p>Convea has been wound down as an active product effort. The opportunity remained real, but the team's focus shifted toward larger-scale data infrastructure problems and ventures with higher leverage per hour invested. The site stays live as a reference, and the lessons learned about cross-platform ingestion, attribution at scale, and AI-on-top-of-clean-data carry into the work that followed.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Focus Areas</h2>
+                        <div class="venture-tags">
+                            <span class="venture-tag">eCommerce</span>
+                            <span class="venture-tag">Analytics</span>
+                            <span class="venture-tag">Attribution</span>
+                            <span class="venture-tag">AI-driven Insights</span>
+                            <span class="venture-tag">Marketing Data</span>
+                            <span class="venture-tag">Cross-platform Integration</span>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="venture-tab-content hidden" id="role-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Co-Founder &amp; Data Lead</h2>
+                        <p>Co-founded Convea and led the data side of the company — designing the cross-platform ingestion layer, the attribution and unit-economics model, and the AI insight layer that sat on top.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>What I Built</h2>
+                        <ul class="venture-features">
+                            <li><strong>Data backbone first.</strong> Designed and built the connectors, normalization schema, and cross-platform attribution model before any AI/UI surface existed. The order mattered: AI-on-clean-data was the thesis, and clean data was non-negotiable.</li>
+                            <li><strong>Cross-platform integrations.</strong> Direct ingestion from the major SaaS tools used by SMB eCommerce — Shopify, WooCommerce, Meta Ads, Google Ads, TikTok Ads, Klaviyo, Mailchimp, GA4 — normalized into a single eCommerce schema.</li>
+                            <li><strong>Attribution and unit economics</strong> at the SKU / campaign / channel level. The model was designed to answer profitability questions, not just spend questions.</li>
+                            <li><strong>AI insight layer</strong> on top of the unified dataset — surfacing anomalies, opportunities, and underperforming campaigns in plain language for operators (not analysts).</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Why It Wound Down (and What I Took From It)</h2>
+                        <p>Convea was sunset when team focus shifted to larger-scale data infrastructure problems with higher leverage per hour invested. What stayed with me: building the data backbone before the AI layer is the only way "AI insights" stops being a buzzword. Most products in this space skip that step and end up summarizing noise. Convea didn't, and the architecture choices made there flow directly into how I approach data-and-AI products today.</p>
+                    </section>
+                </div>
             </div>
         </article>
     </main>
+
+    <script>
+        document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tab = btn.dataset.vtab;
+                document.querySelectorAll('.venture-tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(tab + '-tab').classList.remove('hidden');
+            });
+        });
+
+        const breadcrumbDropdown = document.querySelector('.breadcrumb-dropdown');
+        if (breadcrumbDropdown) {
+            const btn = breadcrumbDropdown.querySelector('.breadcrumb-current');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const open = breadcrumbDropdown.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', () => {
+                breadcrumbDropdown.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+        </script>
 </body>
 </html>

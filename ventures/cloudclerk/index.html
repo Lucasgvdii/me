@@ -34,13 +34,23 @@
 
     <main class="page-fade-in">
         <article class="venture-page">
-            <div class="venture-nav-row">
-                <a href="../../ventures/" class="back-link">← Back to Ventures</a>
-            </div>
-            <div class="venture-sibling-nav">
-                <a href="../numia/" class="venture-sibling-link">← Other ventures: Numia</a>
-                <a href="../obsessiondb/" class="venture-sibling-link">Other ventures: ObsessionDB →</a>
-            </div>
+            <nav class="venture-breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../">Ventures</a>
+                <span class="breadcrumb-sep">/</span>
+                <div class="breadcrumb-dropdown">
+                    <button class="breadcrumb-current" type="button" aria-haspopup="true" aria-expanded="false">
+                        CloudClerk
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <ul class="breadcrumb-menu">
+                    <li><a href="../numia/"><span>Numia</span></a></li>
+                    <li><a href="../obsessiondb/"><span>ObsessionDB</span></a></li>
+                    <li class="breadcrumb-menu-sunset"><a href="../convea/"><span>Convea</span><span class="sunset-tag">Sunset</span></a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="venture-title-row">
                 <div class="venture-title-left">
@@ -55,54 +65,119 @@
                 </div>
             </div>
 
-            <div class="venture-role">Co-Founder - CEO</div>
+            <div class="venture-role">Co-Founder &amp; CEO — Project Development &amp; Management</div>
 
-            <div class="venture-page-content">
-                <section class="venture-section">
-                    <h2>Understand and Reduce Your BigQuery Costs with the Right Tools</h2>
-                    <p>CloudClerk aims to provide the most powerful and transparent tooling for organizations to understand, control, and reduce their BigQuery costs, returning full ownership of cost intelligence to the teams that generate and consume data.</p>
-                    <p>Unlike traditional approaches that rely on one-off audits or black-box recommendations, CloudClerk is built to empower customers throughout the entire optimization journey. The platform equips companies with everything they need to investigate, analyze, and optimize their BigQuery billing autonomously, while being continuously supported with expert guidance.</p>
-                </section>
+            <div class="venture-tabs">
+                <button class="venture-tab-btn active" data-vtab="venture">About the venture</button>
+                <button class="venture-tab-btn" data-vtab="role">About my role</button>
+            </div>
 
-                <section class="venture-section">
-                    <h2>Platform Capabilities</h2>
-                    <ul class="venture-features">
-                        <li><strong>Simplicity</strong> - Intuitive tools that make finding and understanding cost issues easy</li>
-                        <li><strong>Transparency</strong> - Full visibility into why costs are incurred, not just where</li>
-                        <li><strong>AI Powered</strong> - Automatic issue detection, smart monitoring, and tailored recommendations from our AI agents</li>
-                        <li><strong>Ownership</strong> - Self-serve platform that returns full control of cost intelligence to your team</li>
-                    </ul>
-                </section>
+            <div class="venture-tab-content" id="venture-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Understand and Reduce Your BigQuery Costs with the Right Tools</h2>
+                        <p>CloudClerk aims to provide the most powerful and transparent tooling for organizations to understand, control, and reduce their BigQuery costs, returning full ownership of cost intelligence to the teams that generate and consume data.</p>
+                        <p>Unlike traditional approaches that rely on one-off audits or black-box recommendations, CloudClerk is built to empower customers throughout the entire optimization journey. The platform equips companies with everything they need to investigate, analyze, and optimize their BigQuery billing autonomously, while being continuously supported with expert guidance.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>What CloudClerk Delivers</h2>
-                    <ul class="venture-features">
-                        <li><strong>Full-featured platform</strong> for BigQuery cost analysis and optimization</li>
-                        <li><strong>Consulting and advisory services</strong> for complex or large-scale environments</li>
-                        <li><strong>Audits and cost diagnostics</strong> - Always paired with tooling and knowledge transfer</li>
-                        <li><strong>In-house and privacy-first deployments</strong> for organizations with strict data governance</li>
-                    </ul>
-                    <p>This hybrid approach ensures that teams are not left with static reports, but with capabilities they can own and extend over time.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>Platform Capabilities</h2>
+                        <ul class="venture-features">
+                            <li><strong>Simplicity</strong> - Intuitive tools that make finding and understanding cost issues easy</li>
+                            <li><strong>Transparency</strong> - Full visibility into why costs are incurred, not just where</li>
+                            <li><strong>AI Powered</strong> - Automatic issue detection, smart monitoring, and tailored recommendations from our AI agents</li>
+                            <li><strong>Ownership</strong> - Self-serve platform that returns full control of cost intelligence to your team</li>
+                        </ul>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>Impact</h2>
-                    <ul class="venture-features">
-                        <li><strong>Up to 60% reduction</strong> in BigQuery costs for enterprise customers</li>
-                        <li><strong>Immediate improvements</strong> in cost predictability and accountability across data teams</li>
-                        <li><strong>Faster iteration cycles</strong> due to clearer visibility into performance–cost trade-offs</li>
-                    </ul>
-                </section>
+                    <section class="venture-section">
+                        <h2>What CloudClerk Delivers</h2>
+                        <ul class="venture-features">
+                            <li><strong>Full-featured platform</strong> for BigQuery cost analysis and optimization</li>
+                            <li><strong>Consulting and advisory services</strong> for complex or large-scale environments</li>
+                            <li><strong>Audits and cost diagnostics</strong> - Always paired with tooling and knowledge transfer</li>
+                            <li><strong>In-house and privacy-first deployments</strong> for organizations with strict data governance</li>
+                        </ul>
+                        <p>This hybrid approach ensures that teams are not left with static reports, but with capabilities they can own and extend over time.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>How It Started</h2>
-                    <p>CloudClerk emerged from more than five years of hands-on experience processing petabytes of data in BigQuery at scale.</p>
-                    <p>The founding team brings deep expertise in BigQuery internals, billing mechanics, and large-scale data workloads, developed through years of operating high-volume production systems. This experience enabled the team to understand not only how BigQuery is used, but also how its billing system can be optimized, tuned, and — when needed — strategically re-architected.</p>
-                    <p>CloudClerk was built to solve a recurring problem seen across data-driven organizations: rapidly growing BigQuery costs paired with limited visibility and control. Instead of offering superficial fixes, the team set out to build a solution that combines advanced tooling, deep technical knowledge, and long-term customer enablement.</p>
-                    <p>Today, CloudClerk stands as a trusted optimization layer for BigQuery, helping organizations align their data ambitions with sustainable, predictable cloud costs.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>Impact</h2>
+                        <ul class="venture-features">
+                            <li><strong>Up to 60% reduction</strong> in BigQuery costs for enterprise customers</li>
+                            <li><strong>Immediate improvements</strong> in cost predictability and accountability across data teams</li>
+                            <li><strong>Faster iteration cycles</strong> due to clearer visibility into performance–cost trade-offs</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>How It Started</h2>
+                        <p>CloudClerk emerged from more than five years of hands-on experience processing petabytes of data in BigQuery at scale.</p>
+                        <p>The founding team brings deep expertise in BigQuery internals, billing mechanics, and large-scale data workloads, developed through years of operating high-volume production systems. This experience enabled the team to understand not only how BigQuery is used, but also how its billing system can be optimized, tuned, and — when needed — strategically re-architected.</p>
+                        <p>CloudClerk was built to solve a recurring problem seen across data-driven organizations: rapidly growing BigQuery costs paired with limited visibility and control. Instead of offering superficial fixes, the team set out to build a solution that combines advanced tooling, deep technical knowledge, and long-term customer enablement.</p>
+                        <p>Today, CloudClerk stands as a trusted optimization layer for BigQuery, helping organizations align their data ambitions with sustainable, predictable cloud costs.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="venture-tab-content hidden" id="role-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Co-Founder &amp; CEO · 2025 — Now</h2>
+                        <p>Founded and lead CloudClerk as sole technical founder and CEO. Drove the product from zero to working platform across engineering, design, security, GTM, and operations — most of it delegated to AI-driven workflows by design.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>What I'm Building</h2>
+                        <ul class="venture-features">
+                            <li><strong>End-to-end AI-native company.</strong> CloudClerk is a deliberate experiment in how far AI can be pushed to operate the full business lifecycle: engineering, design, security, GTM, and ops all run through AI workflows, built and operated as a one-person company by design.</li>
+                            <li><strong>Diagnosis-to-fix product loop.</strong> The platform doesn't just surface cost issues — it monitors GCP metadata continuously, performs root-cause diagnosis, and delivers the concrete remediation steps to resolve them. Not another dashboard for someone else to act on.</li>
+                            <li><strong>Diagnostic heuristics</strong> built on five-plus years of hands-on experience operating BigQuery environments at petabyte scale — the kind of knowledge that takes time to accumulate and that traditional "cost audit" tools don't have access to.</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Early Outcomes</h2>
+                        <ul class="venture-features">
+                            <li><strong>+60% average reduction</strong> in BigQuery costs and maintenance time across early customer environments</li>
+                            <li><strong>No FinOps hire required</strong> — the platform replaces the equivalent of a dedicated specialist for the teams that use it</li>
+                            <li><strong>Privacy-first deployments</strong> available for organizations with strict data governance</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Why It Matters</h2>
+                        <p>CloudClerk is a personal bet on two ideas: (1) BigQuery cost optimization is a deep technical problem masquerading as a finance problem, and the right tool is one built by someone who has actually operated the systems generating the bill; (2) running a serious product end-to-end as a one-person AI-native company is now possible — and the playbook for doing so is more valuable to figure out than another generic SaaS.</p>
+                    </section>
+                </div>
             </div>
         </article>
     </main>
+
+    <script>
+        document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tab = btn.dataset.vtab;
+                document.querySelectorAll('.venture-tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(tab + '-tab').classList.remove('hidden');
+            });
+        });
+
+        const breadcrumbDropdown = document.querySelector('.breadcrumb-dropdown');
+        if (breadcrumbDropdown) {
+            const btn = breadcrumbDropdown.querySelector('.breadcrumb-current');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const open = breadcrumbDropdown.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', () => {
+                breadcrumbDropdown.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+        </script>
 </body>
 </html>

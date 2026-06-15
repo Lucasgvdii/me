@@ -34,13 +34,23 @@
 
     <main class="page-fade-in">
         <article class="venture-page">
-            <div class="venture-nav-row">
-                <a href="../../ventures/" class="back-link">← Back to Ventures</a>
-            </div>
-            <div class="venture-sibling-nav">
-                <a href="../cloudclerk/" class="venture-sibling-link">← Other ventures: CloudClerk</a>
-                <a href="../orbital/" class="venture-sibling-link">Other ventures: Orbital →</a>
-            </div>
+            <nav class="venture-breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../">Ventures</a>
+                <span class="breadcrumb-sep">/</span>
+                <div class="breadcrumb-dropdown">
+                    <button class="breadcrumb-current" type="button" aria-haspopup="true" aria-expanded="false">
+                        ObsessionDB
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <ul class="breadcrumb-menu">
+                    <li><a href="../numia/"><span>Numia</span></a></li>
+                    <li><a href="../cloudclerk/"><span>CloudClerk</span></a></li>
+                    <li class="breadcrumb-menu-sunset"><a href="../convea/"><span>Convea</span><span class="sunset-tag">Sunset</span></a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="venture-title-row">
                 <div class="venture-title-left">
@@ -55,31 +65,101 @@
                 </div>
             </div>
 
-            <div class="venture-role">Co-Founder - Data Lead</div>
+            <div class="venture-role">Founding Engineer — Cloud Infra/Systems &amp; Lead FDE</div>
 
-            <div class="venture-page-content">
-                <section class="venture-section">
-                    <h2>Performance Per Dollar, Redefined</h2>
-                    <p>ObsessionDB is pushing the limits of what hosted ClickHouse® databases can deliver per dollar. Built for teams that need serious analytical power without the typical cloud markup, ObsessionDB offers optimized infrastructure designed to maximize query performance while keeping costs predictable and low.</p>
-                </section>
+            <div class="venture-tabs">
+                <button class="venture-tab-btn active" data-vtab="venture">About the venture</button>
+                <button class="venture-tab-btn" data-vtab="role">About my role</button>
+            </div>
 
-                <section class="venture-section">
-                    <h2>Why ObsessionDB</h2>
-                    <ul class="venture-features">
-                        <li><strong>Cost efficiency</strong> - Significantly lower price point than major cloud-hosted ClickHouse® providers</li>
-                        <li><strong>Performance first</strong> - Infrastructure tuned specifically for ClickHouse® workloads</li>
-                        <li><strong>No compromise</strong> - Full ClickHouse® compatibility without feature locks or artificial limitations</li>
-                        <li><strong>Simplicity</strong> - Managed hosting that removes the operational burden of running ClickHouse® yourself</li>
-                    </ul>
-                </section>
+            <div class="venture-tab-content" id="venture-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Performance Per Dollar, Redefined</h2>
+                        <p>ObsessionDB is pushing the limits of what hosted ClickHouse® databases can deliver per dollar. Built for teams that need serious analytical power without the typical cloud markup, ObsessionDB offers optimized infrastructure designed to maximize query performance while keeping costs predictable and low.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>How It Started</h2>
-                    <p>ObsessionDB was born from years of running ClickHouse® at scale across data-intensive products. After repeatedly hitting the ceiling of what existing hosted solutions could offer — both in performance and in cost — the team decided to build something better.</p>
-                    <p>The result is an infrastructure layer obsessively optimized for ClickHouse®, stripping away unnecessary overhead and passing the savings directly to customers.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>Why ObsessionDB</h2>
+                        <ul class="venture-features">
+                            <li><strong>Cost efficiency</strong> - Significantly lower price point than major cloud-hosted ClickHouse® providers</li>
+                            <li><strong>Performance first</strong> - Infrastructure tuned specifically for ClickHouse® workloads</li>
+                            <li><strong>No compromise</strong> - Full ClickHouse® compatibility without feature locks or artificial limitations</li>
+                            <li><strong>Simplicity</strong> - Managed hosting that removes the operational burden of running ClickHouse® yourself</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>The Compute-Compute-Storage Separation Layer</h2>
+                        <p>At the core of ObsessionDB sits a proprietary compute-compute-storage separation layer designed to push managed ClickHouse® performance per dollar beyond what standard hosted offerings deliver. Users can scale storage, ingestion compute, and query compute independently — adapting each cluster to its exact workload rather than buying into pre-defined "instance sizes".</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>The Ecosystem</h2>
+                        <ul class="venture-features">
+                            <li><strong>Obsession Console</strong> — A console layer that fills the gaps in the native ClickHouse® experience: materialized views backfilling, jobs management, settings modularity, and analytics. Open at <a href="https://console.obsessiondb.com" target="_blank" rel="noopener">console.obsessiondb.com</a>.</li>
+                            <li><strong>CH-KIT</strong> — The first open-source drizzle-kit-style tooling for ClickHouse®, available in TypeScript and Python. Designed to enable serious-scale adoption by giving developers the schema management and migration workflows they expect from modern databases. Available at <a href="https://chkit.obsessiondb.com" target="_blank" rel="noopener">chkit.obsessiondb.com</a>.</li>
+                            <li><strong>Forward Deployed Engineering</strong> — Hands-on architectural support embedded directly with customer teams, for organizations where in-house ClickHouse® expertise is scarce.</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>How It Started</h2>
+                        <p>ObsessionDB was born from years of running ClickHouse® at scale across data-intensive products. After repeatedly hitting the ceiling of what existing hosted solutions could offer — both in performance and in cost — the team decided to build something better.</p>
+                        <p>The result is an infrastructure layer obsessively optimized for ClickHouse®, stripping away unnecessary overhead and passing the savings directly to customers.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="venture-tab-content hidden" id="role-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Founding Engineer · 2026 — Now</h2>
+                        <p>At founding stage, working across the full infrastructure surface and acting as Lead Forward Deployed Engineer with customer teams.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>What I'm Building</h2>
+                        <ul class="venture-features">
+                            <li><strong>Compute-compute-storage separation layer</strong> — a proprietary infrastructure layer that pushes managed ClickHouse® performance per dollar beyond standard hosted offerings</li>
+                            <li><strong>Obsession Console</strong> — the management UI that fills the gaps in native ClickHouse®: materialized views backfilling, jobs management, settings modularity, and analytics, so users can adapt each cluster to its exact needs</li>
+                            <li><strong>CH-KIT</strong> — designed, built, and maintained from scratch. The first open-source drizzle-kit-style tooling for ClickHouse® (TypeScript and Python). A key enabler for serious-scale adoption of ClickHouse® in production environments</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Lead FDE Work</h2>
+                        <p>Beyond the internal build, I serve as Lead Forward Deployed Engineer — working directly with clients to design their data systems on top of ObsessionDB and its ecosystem. The pattern is consistent: organizations have ClickHouse® workloads they need to operate seriously but don't have the senior in-house expertise to optimize them. I embed with their team, design the architecture, and stay close through delivery and the first scaling cycles.</p>
+                    </section>
+                </div>
             </div>
         </article>
     </main>
+
+    <script>
+        document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tab = btn.dataset.vtab;
+                document.querySelectorAll('.venture-tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(tab + '-tab').classList.remove('hidden');
+            });
+        });
+
+        const breadcrumbDropdown = document.querySelector('.breadcrumb-dropdown');
+        if (breadcrumbDropdown) {
+            const btn = breadcrumbDropdown.querySelector('.breadcrumb-current');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const open = breadcrumbDropdown.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', () => {
+                breadcrumbDropdown.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+        </script>
 </body>
 </html>

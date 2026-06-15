@@ -34,14 +34,23 @@
 
     <main class="page-fade-in">
         <article class="venture-page">
-            <div class="venture-nav-row">
-                <a href="../../ventures/" class="back-link">← Back to Ventures</a>
-            </div>
-            <div class="venture-sibling-nav">
-                <a href="../orbital/" class="venture-sibling-link">← Other ventures: Orbital</a>
-                <a href="../cloudclerk/" class="venture-sibling-link">Other ventures: CloudClerk →</a>
-
-            </div>
+            <nav class="venture-breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../">Ventures</a>
+                <span class="breadcrumb-sep">/</span>
+                <div class="breadcrumb-dropdown">
+                    <button class="breadcrumb-current" type="button" aria-haspopup="true" aria-expanded="false">
+                        Numia
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <ul class="breadcrumb-menu">
+                    <li><a href="../cloudclerk/"><span>CloudClerk</span></a></li>
+                    <li><a href="../obsessiondb/"><span>ObsessionDB</span></a></li>
+                    <li class="breadcrumb-menu-sunset"><a href="../convea/"><span>Convea</span><span class="sunset-tag">Sunset</span></a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="venture-title-row">
                 <div class="venture-title-left">
@@ -56,47 +65,114 @@
                 </div>
             </div>
 
-            <div class="venture-role">Co-Founder - Data Lead</div>
+            <div class="venture-role">Founding Engineer — Lead FDE, Data &amp; Product</div>
 
-            <div class="venture-page-content">
-                <section class="venture-section">
-                    <h2>The First Blockchain Data Cloud Platform</h2>
-                    <p>Numia is the first data cloud platform purpose-built for institutions, blockchains, and developers, covering the full on-chain data lifecycle — from core infrastructure to advanced analytics, activation, and growth.</p>
-                </section>
+            <div class="venture-tabs">
+                <button class="venture-tab-btn active" data-vtab="venture">About the venture</button>
+                <button class="venture-tab-btn" data-vtab="role">About my role</button>
+            </div>
 
-                <section class="venture-section">
-                    <h2>End-to-End Services</h2>
-                    <ul class="venture-features">
-                        <li><strong>Critical blockchain infrastructure</strong> - High-performance, low-latency RPC and LCD nodes used in production to interact with and query blockchains in real time</li>
-                        <li><strong>Large-scale data ingestion</strong> - Processing full blockchain state and continuously parsing, normalizing, and structuring raw on-chain data</li>
-                        <li><strong>Advanced data processing and analytics</strong> - Transforming raw blockchain data into reliable, actionable insights</li>
-                        <li><strong>Product and data access layer</strong> - Advanced dashboards, real-time APIs with complex metrics, and business intelligence services</li>
-                        <li><strong>Growth and data-driven marketing</strong> - Address-level attribution, on-chain user behavior analysis, and optimization of adoption strategies</li>
-                    </ul>
-                    <p>Numia enables protocols, developers, and institutions to operate, understand, and scale blockchain systems at an enterprise level, turning on-chain data into a durable competitive advantage.</p>
-                </section>
+            <div class="venture-tab-content" id="venture-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>The First Blockchain Data Cloud Platform</h2>
+                        <p>Numia is the first data cloud platform purpose-built for institutions, blockchains, and developers, covering the full on-chain data lifecycle — from core infrastructure to advanced analytics, activation, and growth.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>Numia by the Numbers</h2>
-                    <ul class="venture-features">
-                        <li><strong>100+ petabytes</strong> of on-chain data processed</li>
-                        <li><strong>50+ blockchains</strong> indexed, spanning multiple ecosystems</li>
-                        <li><strong>30+ blockchain foundations</strong> and core protocol teams as paying clients</li>
-                        <li><strong>Hundreds of million requests</strong> powering blockchain frontends with over 99.9% uptime for teams like Osmosis or dYdX</li>
-                    </ul>
-                    <p>Numia is a primary data provider for leading global blockchain analytics platforms, including Dune, Token Terminal, Nansen, Blockpit, and Artemis — platforms whose data is consumed by institutional investors, financial terminals, enterprises, and public-sector entities, including integrations with Bloomberg and government-level analytics environments.</p>
-                    <p>In addition, Numia powers or feeds data into widely used market tools such as CoinGecko, CoinMarketCap, DeFiLlama, and other industry-standard platforms.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>End-to-End Services</h2>
+                        <ul class="venture-features">
+                            <li><strong>Critical blockchain infrastructure</strong> - High-performance, low-latency RPC and LCD nodes used in production to interact with and query blockchains in real time</li>
+                            <li><strong>Large-scale data ingestion</strong> - Processing full blockchain state and continuously parsing, normalizing, and structuring raw on-chain data</li>
+                            <li><strong>Advanced data processing and analytics</strong> - Transforming raw blockchain data into reliable, actionable insights</li>
+                            <li><strong>Product and data access layer</strong> - Advanced dashboards, real-time APIs with complex metrics, and business intelligence services</li>
+                            <li><strong>Growth and data-driven marketing</strong> - Address-level attribution, on-chain user behavior analysis, and optimization of adoption strategies</li>
+                        </ul>
+                        <p>Numia enables protocols, developers, and institutions to operate, understand, and scale blockchain systems at an enterprise level, turning on-chain data into a durable competitive advantage.</p>
+                    </section>
 
-                <section class="venture-section">
-                    <h2>How It Started</h2>
-                    <p>Numia originated from a founding team with deep expertise in blockchain architecture, large-scale data engineering, distributed systems, and production-grade protocols.</p>
-                    <p>From the beginning, the team focused on solving one of the ecosystem's hardest problems: processing and extracting value from massive volumes of on-chain data. Prior experience designing, deploying, and operating mission-critical infrastructure enabled the creation of a platform capable of handling large, complex, and continuously growing datasets, while maintaining enterprise-level reliability and performance.</p>
-                    <p>While Numia's roots are closely connected to the Cosmos ecosystem, its architecture has always been chain-agnostic and built for scale, applying best-in-class data engineering and cloud infrastructure principles across blockchains and distributed systems.</p>
-                    <p>Today, Numia combines deep blockchain expertise with a strong specialization in large-scale data processing, positioning itself as a strategic partner for any organization that needs to operate and derive insight from on-chain data at scale.</p>
-                </section>
+                    <section class="venture-section">
+                        <h2>Numia by the Numbers</h2>
+                        <ul class="venture-features">
+                            <li><strong>100+ petabytes</strong> of on-chain data processed</li>
+                            <li><strong>50+ blockchains</strong> indexed, spanning multiple ecosystems</li>
+                            <li><strong>30+ blockchain foundations</strong> and core protocol teams as paying clients</li>
+                            <li><strong>Hundreds of million requests</strong> powering blockchain frontends with over 99.9% uptime for teams like Osmosis or dYdX</li>
+                        </ul>
+                        <p>Numia is a primary data provider for leading global blockchain analytics platforms, including Dune, Token Terminal, Nansen, Blockpit, and Artemis — platforms whose data is consumed by institutional investors, financial terminals, enterprises, and public-sector entities, including integrations with Bloomberg and government-level analytics environments.</p>
+                        <p>In addition, Numia powers or feeds data into widely used market tools such as CoinGecko, CoinMarketCap, DeFiLlama, and other industry-standard platforms.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>How It Started</h2>
+                        <p>Numia originated from a founding team with deep expertise in blockchain architecture, large-scale data engineering, distributed systems, and production-grade protocols.</p>
+                        <p>From the beginning, the team focused on solving one of the ecosystem's hardest problems: processing and extracting value from massive volumes of on-chain data. Prior experience designing, deploying, and operating mission-critical infrastructure enabled the creation of a platform capable of handling large, complex, and continuously growing datasets, while maintaining enterprise-level reliability and performance.</p>
+                        <p>While Numia's roots are closely connected to the Cosmos ecosystem, its architecture has always been chain-agnostic and built for scale, applying best-in-class data engineering and cloud infrastructure principles across blockchains and distributed systems.</p>
+                        <p>Today, Numia combines deep blockchain expertise with a strong specialization in large-scale data processing, positioning itself as a strategic partner for any organization that needs to operate and derive insight from on-chain data at scale.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="venture-tab-content hidden" id="role-tab">
+                <div class="venture-page-content">
+                    <section class="venture-section">
+                        <h2>Founding Engineer · 2022 — 2026</h2>
+                        <p>Joined Numia at founding stage and helped take it from zero to today's scale. Owned both the technical architecture of the platform and the institutional client relationships built around it.</p>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>What I Built</h2>
+                        <ul class="venture-features">
+                            <li><strong>Petabyte-scale data architecture end-to-end</strong> — ingestion, transformation, and serving (BigQuery, dbt, ClickHouse, Tinybird), from raw on-chain data through customer-facing real-time APIs running under enterprise SLAs</li>
+                            <li><strong>8+ product suites on top of the platform</strong> — including Numia Chat (LLM-based natural-language interface to on-chain data), Sybil detection, wallet tracing, intelligence dashboards, and outbound integrations enabling major crypto data players (Bloomberg, JP Morgan via Token Terminal, CoinMarketCap, CoinGecko) to consume Numia data downstream</li>
+                            <li><strong>Proprietary on-chain algorithms</strong> — including frontier concentrated-liquidity APR estimations for Uniswap v3 and other on-chain modeling work</li>
+                            <li><strong>Platform re-architecture</strong> that cut infrastructure cost by 60%+ while improving reliability and scalability</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>Customers</h2>
+                        <p>Managed 15+ institutional clients directly — including dYdX, Celestia, Cosmos Hub, Nansen, and Osmosis among them — translating ambiguous data and AI requirements into shipped systems. Acted as both technical architect and product advisor depending on the engagement, often in parallel within the same account (Osmosis is a representative example).</p>
+                        <ul class="venture-features">
+                            <li><strong>Zero churn</strong> across accounts under my direct ownership</li>
+                            <li><strong>Majority of owned accounts expanded</strong> into upsells or new product lines</li>
+                            <li><strong>Inbound leads</strong> generated through technical conversations during ongoing engagements</li>
+                        </ul>
+                    </section>
+
+                    <section class="venture-section">
+                        <h2>How I Worked</h2>
+                        <p>Most of the value I added at Numia sat in the seam between business and engineering: weekly working sessions with enterprise teams, translating those into both technical architecture decisions for the client's internal systems and product collaboration on what they shipped on top of Numia. The infrastructure and product engineering came second — the customer conversations came first.</p>
+                    </section>
+                </div>
             </div>
         </article>
     </main>
+
+    <script>
+        document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.venture-tabs .venture-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tab = btn.dataset.vtab;
+                document.querySelectorAll('.venture-tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(tab + '-tab').classList.remove('hidden');
+            });
+        });
+
+        const breadcrumbDropdown = document.querySelector('.breadcrumb-dropdown');
+        if (breadcrumbDropdown) {
+            const btn = breadcrumbDropdown.querySelector('.breadcrumb-current');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const open = breadcrumbDropdown.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', () => {
+                breadcrumbDropdown.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        }
+        </script>
 </body>
 </html>
