@@ -98,7 +98,8 @@
                                 * { box-sizing: border-box; margin: 0; padding: 0; }
                                 .cv { max-width: 880px; margin: 0 auto; background: #fff; padding: 56px 64px; box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.16); border-radius: 4px; }
                                 .cv-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 0; margin-bottom: 8px; }
-                                .cv-header-main { flex: 1; min-width: 0; }
+                                .cv-header-main { flex: 1; min-width: 0; display: flex; align-items: center; gap: 14px; }
+                                .cv-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
                                 .cv-header h1 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 35px; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; }
                                 .cv-role { font-size: 14px; color: var(--muted); font-weight: 500; letter-spacing: 0.3px; margin-bottom: 0; }
                                 .cv-contact-side { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; text-align: right; font-size: 12px; color: var(--muted); white-space: nowrap; }
@@ -161,8 +162,11 @@
                             <main class="cv">
                                 <header class="cv-header">
                                     <div class="cv-header-main">
-                                        <h1>Lucas García de Viedma Pérez</h1>
-                                        <div class="cv-role">Co-Founder | Complex Data Systems Engineering &amp; Product Management</div>
+                                        <img class="cv-avatar" src="../assets/me-square.png" alt="Lucas García de Viedma Pérez">
+                                        <div>
+                                            <h1>Lucas García de Viedma Pérez</h1>
+                                            <div class="cv-role">Co-Founder | Complex Data Systems Engineering &amp; Product Management</div>
+                                        </div>
                                     </div>
                                     <ul class="cv-contact-side">
                                         <li><a href="mailto:lucas.gvdp@gmail.com">lucas.gvdp@gmail.com</a></li>
