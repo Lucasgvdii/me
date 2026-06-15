@@ -96,6 +96,7 @@
 
             <!-- Ventures Tab -->
             <div class="tab-content" id="ventures-tab">
+                <div class="ventures-divider"><span>Active</span></div>
                 <div class="ventures-grid">
                     <!-- Numia -->
                     <div class="venture-card" data-href="numia/">
@@ -177,21 +178,24 @@
                             <p>Pushing the performance-per-dollar limits of hosted ClickHouse® databases. Optimized infrastructure for teams that need analytical power without the cloud markup.</p>
                         </div>
                     </div>
-                    <!-- Orbital -->
-                    <div class="venture-card" data-href="orbital/">
+                </div>
+                <div class="ventures-divider"><span>Sunset</span></div>
+                <div class="ventures-grid">
+                    <!-- Convea -->
+                    <div class="venture-card venture-card-sunset" data-href="convea/">
                         <div class="venture-image">
-                            <img src="../assets/projects/orbitalbanner.png" alt="Orbital" class="venture-project-img">
+                            <img src="../assets/projects/convea.png" alt="Convea" class="venture-project-img">
                         </div>
                         <div class="venture-content">
                             <div class="venture-header">
                                 <div class="venture-company-logo">
-                                    <img src="../assets/projects/orbital.svg" alt="Orbital">
+                                    <img src="../assets/employment/convea_ai_logo.jfif" alt="Convea">
                                 </div>
-                                <h3>Orbital</h3>
-                                <a href="https://enterorbital.com/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <h3>Convea</h3>
+                                <a href="https://convea.ai" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
                                 <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
                             </div>
-                            <p>Venture studio exploring AI agents within complex systems. Consulting, research, and insights on implementing intelligent automation. The engineering foundation behind CloudClerk, Numia, and more.</p>
+                            <p>eCommerce analytics platform that brings together data from your sales, marketing, and advertising tools to give you fast, AI-driven insights that help you make smarter decisions fully based on your data.</p>
                         </div>
                     </div>
                 </div>
@@ -199,9 +203,166 @@
 
             <!-- Projects Tab -->
             <div class="tab-content hidden" id="projects-tab">
+                <div class="projects-filters">
+                    <div class="filter-group">
+                        <span class="filter-label">Status</span>
+                        <button class="filter-chip active" data-filter="status" data-value="all">All</button>
+                        <button class="filter-chip" data-filter="status" data-value="active">Active</button>
+                        <button class="filter-chip" data-filter="status" data-value="discontinued">Discontinued</button>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Venture</span>
+                        <button class="filter-chip active" data-filter="venture" data-value="all">All</button>
+                        <button class="filter-chip" data-filter="venture" data-value="cloudclerk">CloudClerk</button>
+                        <button class="filter-chip" data-filter="venture" data-value="convea">Convea</button>
+                        <button class="filter-chip" data-filter="venture" data-value="numia">Numia</button>
+                        <button class="filter-chip" data-filter="venture" data-value="obsessiondb">ObsessionDB</button>
+                        <button class="filter-chip" data-filter="venture" data-value="independent">Independent</button>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Type</span>
+                        <button class="filter-chip active" data-filter="type" data-value="all">All</button>
+                        <button class="filter-chip" data-filter="type" data-value="platform">Platform</button>
+                        <button class="filter-chip" data-filter="type" data-value="devtools">Dev tools</button>
+                        <button class="filter-chip" data-filter="type" data-value="bi">BI / Dashboards</button>
+                        <button class="filter-chip" data-filter="type" data-value="ai">AI</button>
+                        <button class="filter-chip" data-filter="type" data-value="datainfra">Data infra</button>
+                    </div>
+                </div>
+                <div class="projects-stack-strip">
+                    <div class="projects-stack-strip-mask">
+                        <div class="projects-stack-strip-track">
+                            <span class="projects-stack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/dbt.png" alt="">DBT</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/react.png" alt="">React</span>
+                            <!-- duplicated for seamless marquee -->
+                            <span class="projects-stack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/dbt.png" alt="">DBT</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
+                            <span class="projects-stack-item"><img src="../assets/stack/react.png" alt="">React</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="projects-grid">
+                    <!-- CloudClerk -->
+                    <div class="venture-card" data-status="active" data-venture="cloudclerk" data-type="platform">
+                        <div class="venture-image">
+                            <img src="../assets/projects/cloudclerk.png" alt="CloudClerk" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-company-logo">
+                                <img src="../assets/projects/cloudclerklogo.png" alt="CloudClerk">
+                            </div>
+                            <div class="venture-badge">Active</div>
+                            <div class="venture-header">
+                                <h3>CloudClerk</h3>
+                                <a href="https://www.cloudclerk.ai/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>AI-driven BigQuery cost monitoring and optimization platform. Continuous diagnosis and concrete remediation — averaging +60% reduction in costs and maintenance time across early customer environments.</p>
+                        </div>
+                    </div>
+                    <!-- Convea -->
+                    <div class="venture-card" data-status="active" data-venture="convea" data-type="platform">
+                        <div class="venture-image">
+                            <img src="../assets/projects/convea.png" alt="Convea" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-company-logo">
+                                <img src="../assets/employment/convea_ai_logo.jfif" alt="Convea">
+                            </div>
+                            <div class="venture-badge">Active</div>
+                            <div class="venture-header">
+                                <h3>Convea</h3>
+                                <a href="https://convea.ai" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>eCommerce analytics platform that consolidates sales, marketing, and advertising data into a single AI-driven decision layer for SMB online retailers.</p>
+                        </div>
+                    </div>
+                    <!-- BidVisor (discontinued) -->
+                    <div class="venture-card venture-card-sunset" data-status="discontinued" data-venture="independent" data-type="platform">
+                        <div class="venture-image venture-image-placeholder">
+                            <span>BidVisor</span>
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-badge">Discontinued</div>
+                            <div class="venture-header">
+                                <h3>BidVisor</h3>
+                            </div>
+                            <p>EU public tender intelligence platform — searchable database of European public procurement opportunities with AI-assisted analysis to track, investigate, and manage bids.</p>
+                        </div>
+                    </div>
+                    <!-- Thesaros -->
+                    <div class="venture-card" data-status="active" data-venture="independent" data-type="platform">
+                        <div class="venture-image">
+                            <img src="../assets/projects/thesaros.png" alt="Thesaros" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-badge">Active</div>
+                            <div class="venture-header">
+                                <h3>Thesaros</h3>
+                                <a href="https://thesaros.com" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>Magic: The Gathering collection and tournament management tool — single platform for collectors and store owners to organize inventories, run events, and track decks and performance.</p>
+                        </div>
+                    </div>
+                    <!-- Obsession Console -->
+                    <div class="venture-card" data-status="active" data-venture="obsessiondb" data-type="platform">
+                        <div class="venture-image">
+                            <img src="../assets/projects/ob-console.png" alt="Obsession Console" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-company-logo">
+                                <img src="../assets/projects/obsession.png" alt="ObsessionDB">
+                            </div>
+                            <div class="venture-badge">Active</div>
+                            <div class="venture-header">
+                                <h3>Obsession Console</h3>
+                                <a href="https://console.obsessiondb.com/login" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>Console layer over hosted ClickHouse® offering features missing from the native experience: materialized views backfilling, jobs management, settings modularity, and analytics.</p>
+                        </div>
+                    </div>
+                    <!-- ch-kit -->
+                    <div class="venture-card" data-status="active" data-venture="obsessiondb" data-type="devtools">
+                        <div class="venture-image">
+                            <img src="../assets/projects/chkit.png" alt="ch-kit" class="venture-project-img">
+                        </div>
+                        <div class="venture-content">
+                            <div class="venture-company-logo">
+                                <img src="../assets/projects/obsession.png" alt="ObsessionDB">
+                            </div>
+                            <div class="venture-badge">Active</div>
+                            <div class="venture-header">
+                                <h3>ch-kit</h3>
+                                <a href="https://chkit.obsessiondb.com/" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                            </div>
+                            <p>First open-source drizzle-kit-style tooling for ClickHouse® — TypeScript and Python — for schema management and migrations at scale. Designed to enable serious adoption of ClickHouse in production environments.</p>
+                        </div>
+                    </div>
                     <!-- Token Pulse -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="bi">
                         <div class="venture-image">
                             <img src="../assets/projects/pulse.png" alt="Token Pulse" class="venture-project-img">
                         </div>
@@ -220,7 +381,7 @@
                         </div>
                     </div>
                     <!-- NumiaAI -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="ai">
                         <div class="venture-image">
                             <img src="../assets/projects/nuamiai.jfif" alt="NumiaAI" class="venture-project-img">
                         </div>
@@ -239,7 +400,7 @@
                         </div>
                     </div>
                     <!-- Data Lenses -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="bi">
                         <div class="venture-image">
                             <img src="../assets/projects/lenses.jfif" alt="Data Lenses" class="venture-project-img">
                         </div>
@@ -258,7 +419,7 @@
                         </div>
                     </div>
                     <!-- Celestia Data -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="bi">
                         <div class="venture-image">
                             <img src="../assets/projects/celestia.jfif" alt="Celestia Data" class="venture-project-img">
                         </div>
@@ -277,7 +438,7 @@
                         </div>
                     </div>
                     <!-- NumiaSQL -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="datainfra">
                         <div class="venture-image">
                             <img src="../assets/projects/numiasql.png" alt="NumiaSQL" class="venture-project-img">
                         </div>
@@ -296,7 +457,7 @@
                         </div>
                     </div>
                     <!-- NumiaAPI -->
-                    <div class="venture-card">
+                    <div class="venture-card" data-status="active" data-venture="numia" data-type="datainfra">
                         <div class="venture-image">
                             <img src="../assets/projects/apis.jfif" alt="NumiaAPI" class="venture-project-img">
                         </div>
@@ -312,55 +473,6 @@
                             </div>
                             <p>Extensive set of public and private endpoints that power frontends or large blockchain players like Osmosis, Neutron, Xion, and chain specific pages for Defillama, DexScreener, Coingecko or Coinmarketcap.</p>
                             <a href="https://docs.numia.xyz/api/overview/whats-numia-api/" target="_blank" class="venture-read-more">Read more →</a>
-                        </div>
-                    </div>
-                    <!-- Tech Stack Card -->
-                    <div class="venture-card venture-card-techstack">
-                        <div class="venture-content">
-                            <div class="venture-badge">Tech Stack</div>
-                            <h3>Tools & Technologies</h3>
-                            <p>Preferred tooling to build and scale projects.</p>
-                            <div class="techstack-carousels">
-                                <div class="techstack-row">
-                                    <div class="techstack-track">
-                                        <span class="techstack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
-                                        <span class="techstack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
-                                        <span class="techstack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
-                                        <span class="techstack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
-                                        <span class="techstack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
-                                        <span class="techstack-item"><img src="../assets/stack/bq.png" alt="">BigQuery</span>
-                                        <span class="techstack-item"><img src="../assets/stack/ch.png" alt="">ClickHouse®</span>
-                                        <span class="techstack-item"><img src="../assets/stack/psql.png" alt="">PostgreSQL</span>
-                                        <span class="techstack-item"><img src="../assets/stack/mongo.svg" alt="">MongoDB</span>
-                                        <span class="techstack-item"><img src="../assets/stack/tb.png" alt="">TinyBird</span>
-                                    </div>
-                                </div>
-                                <div class="techstack-row">
-                                    <div class="techstack-track techstack-track-reverse">
-                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
-                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
-                                        <span class="techstack-item"><img src="../assets/stack/dbt.png" alt="">DBT (Core & Cloud)</span>
-                                        <span class="techstack-item"><img src="../assets/stack/gcp.png" alt="">GCP</span>
-                                        <span class="techstack-item"><img src="../assets/stack/looker.png" alt="">Looker</span>
-                                    </div>
-                                </div>
-                                <div class="techstack-row">
-                                    <div class="techstack-track">
-                                        <span class="techstack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
-                                        <span class="techstack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
-                                        <span class="techstack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
-                                        <span class="techstack-item"><img src="../assets/stack/react.png" alt="">React</span>
-                                        <span class="techstack-item"><img src="../assets/stack/python.jfif" alt="">Python</span>
-                                        <span class="techstack-item"><img src="../assets/stack/ts.png" alt="">TypeScript</span>
-                                        <span class="techstack-item"><img src="../assets/stack/nexjs.png" alt="">Next.js</span>
-                                        <span class="techstack-item"><img src="../assets/stack/react.png" alt="">React</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -387,7 +499,7 @@
                 if (tabName === 'ventures') {
                     subtitle.textContent = "Businesses I have co-founded";
                 } else {
-                    subtitle.textContent = "Live products I've built and are used by customers (besides the core systems of each venture)";
+                    subtitle.textContent = "Live products I've built and are used by customers (within or outside the ventures scope)";
                 }
             });
         });
@@ -399,6 +511,41 @@
                 // Don't navigate if clicking on a link inside the card
                 if (e.target.closest('a')) return;
                 window.location.href = card.dataset.href;
+            });
+        });
+
+        // Projects filter logic
+        const activeFilters = { status: 'all', venture: 'all', type: 'all' };
+
+        function applyProjectFilters() {
+            const cards = document.querySelectorAll('#projects-tab .venture-card');
+            cards.forEach(card => {
+                // Tech-stack info card always visible
+                if (card.classList.contains('venture-card-techstack')) {
+                    card.style.display = '';
+                    return;
+                }
+                const s = card.dataset.status || 'active';
+                const v = card.dataset.venture || 'independent';
+                const t = card.dataset.type || 'other';
+                const matchS = activeFilters.status === 'all' || activeFilters.status === s;
+                const matchV = activeFilters.venture === 'all' || activeFilters.venture === v;
+                const matchT = activeFilters.type === 'all' || activeFilters.type === t;
+                card.style.display = (matchS && matchV && matchT) ? '' : 'none';
+            });
+        }
+
+        document.querySelectorAll('.projects-filters .filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter;
+                const value = chip.dataset.value;
+                // Toggle active state within this filter group (radio-like)
+                document.querySelectorAll(
+                    `.projects-filters .filter-chip[data-filter="${filter}"]`
+                ).forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                activeFilters[filter] = value;
+                applyProjectFilters();
             });
         });
     </script>

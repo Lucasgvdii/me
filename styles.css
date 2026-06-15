@@ -525,6 +525,40 @@ section {
   margin: 0 auto;
 }
 
+/* Sunset divider between active ventures and retired ones */
+.ventures-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 3rem auto 2rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ventures-divider::before,
+.ventures-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+.ventures-divider span {
+  padding: 0 0.25rem;
+}
+
+/* Sunset venture card: visually subdued */
+.venture-card-sunset {
+  opacity: 0.75;
+  transition: opacity var(--transition);
+}
+.venture-card-sunset:hover {
+  opacity: 1;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -547,6 +581,121 @@ section {
 
 .projects-grid .venture-project-img {
   position: static;
+}
+
+/* Placeholder venture-image (no banner available) */
+.venture-image-placeholder {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+.venture-image-placeholder span {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Projects tab — compact horizontal stack strip (above filters) */
+.projects-stack-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto 1.25rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.projects-stack-strip-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.projects-stack-strip-mask {
+  flex: 1;
+  overflow: hidden;
+  /* Fade edges so the marquee doesn't pop visually */
+  mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.projects-stack-strip-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: projects-stack-marquee 35s linear infinite;
+}
+.projects-stack-strip:hover .projects-stack-strip-track {
+  animation-play-state: paused;
+}
+.projects-stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 13px;
+  color: var(--color-text);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.projects-stack-item img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+@keyframes projects-stack-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Projects filter row (under tabs) */
+.projects-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 1200px;
+  margin: 0 auto 1.75rem;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 72px;
+}
+.filter-chip {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.filter-chip:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+.filter-chip.active {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
 }
 
 .venture-card {

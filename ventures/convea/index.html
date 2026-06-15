@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convea - Lucas Garcia de Viedma</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo/apple-touch-icon.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../../" class="logo"><img src="../../assets/logo/android-chrome-192x192.png" alt="Logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../../">Home</a></li>
+                <li><a href="../../ventures/" class="active">Ventures & Projects</a></li>
+                <li><a href="../../about_me/">About me</a></li>
+                <li><a href="../../blog/">Blog</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-fade-in">
+        <article class="venture-page">
+            <div class="venture-nav-row">
+                <a href="../../ventures/" class="back-link">← Back to Ventures</a>
+            </div>
+            <div class="venture-sibling-nav">
+                <a href="../orbital/" class="venture-sibling-link">← Other ventures: Orbital</a>
+                <a href="../numia/" class="venture-sibling-link">Other ventures: Numia →</a>
+            </div>
+
+            <div class="venture-title-row">
+                <div class="venture-title-left">
+                    <div class="venture-page-logo">
+                        <img src="../../assets/employment/convea_ai_logo.jfif" alt="Convea">
+                    </div>
+                    <h1>Convea</h1>
+                </div>
+                <div class="venture-title-right">
+                    <a href="https://convea.ai" target="_blank" class="venture-visit">Visit Website <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                    <span class="venture-live"><span class="venture-live-dot"></span>Live</span>
+                </div>
+            </div>
+
+            <div class="venture-role">Co-Founder</div>
+
+            <div class="venture-page-content">
+                <section class="venture-section">
+                    <h2>Unified Analytics for eCommerce</h2>
+                    <p><strong>Convea was an eCommerce analytics platform that consolidated data from sales, marketing, and advertising tools into a single, AI-driven decision layer.</strong></p>
+                    <p>The product was built around the observation that small and mid-sized online businesses operate across a fragmented stack — Shopify, WooCommerce, Meta Ads, Google Ads, TikTok Ads, Klaviyo, Mailchimp, GA4, and several others — where each platform reports its own slice of the truth in its own format. The cost of stitching that data together manually scales with revenue, but the value of doing it well is non-linear: a single well-attributed campaign or well-identified inventory anomaly can fund the entire data effort.</p>
+                </section>
+
+                <section class="venture-section">
+                    <h2>What the Platform Did</h2>
+                    <ul class="venture-features">
+                        <li><strong>Cross-platform ingestion</strong> from major sales, marketing, advertising, and CRM tools, normalized into a single eCommerce schema</li>
+                        <li><strong>Attribution and unit economics</strong> at the SKU, campaign, and channel level — built to answer "is this campaign actually profitable?" rather than just "is it spending?"</li>
+                        <li><strong>AI-driven insights</strong> on top of the unified dataset, surfacing anomalies, opportunities, and underperforming campaigns without requiring SQL or BI expertise</li>
+                        <li><strong>Plain-language reporting</strong> aimed at operators and founders rather than analysts, so the data layer was actionable end-to-end</li>
+                    </ul>
+                </section>
+
+                <section class="venture-section">
+                    <h2>How It Started</h2>
+                    <p>Convea emerged from direct work with a handful of online retailers who were paying for multiple analytics tools and still ending each month uncertain about which channel actually drove margin. The thesis was simple: pre-built dashboards over fragmented data don't solve the problem; bringing the data together and letting AI explain it in plain language does.</p>
+                    <p>The team built the data backbone first — connectors, schema, attribution model — and only then layered the AI insights and product surface on top. The order mattered: most "AI-driven analytics" products skip the backbone and end up summarizing noise.</p>
+                </section>
+
+                <section class="venture-section">
+                    <h2>Why It Was Sunset</h2>
+                    <p>Convea has been wound down as an active product effort. The opportunity remained real, but the team's focus shifted toward larger-scale data infrastructure problems and ventures with higher leverage per hour invested. The site stays live as a reference, and the lessons learned about cross-platform ingestion, attribution at scale, and AI-on-top-of-clean-data carry into the work that followed.</p>
+                </section>
+
+                <section class="venture-section">
+                    <h2>Focus Areas</h2>
+                    <div class="venture-tags">
+                        <span class="venture-tag">eCommerce</span>
+                        <span class="venture-tag">Analytics</span>
+                        <span class="venture-tag">Attribution</span>
+                        <span class="venture-tag">AI-driven Insights</span>
+                        <span class="venture-tag">Marketing Data</span>
+                        <span class="venture-tag">Cross-platform Integration</span>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
