@@ -322,13 +322,21 @@
 
 <!-- ════════ NAV ROW ════════ -->
 <div class="venture-page">
-  <div class="venture-nav-row">
-    <a href="../../../blog/" class="back-link">&larr; Back to Blog</a>
-  </div>
-  <div class="venture-sibling-nav">
-    <span class="venture-sibling-link" style="visibility: hidden;">&larr;</span>
-    <!-- <a href="1_next_article.html" class="venture-sibling-link">Next: Article title &rarr;</a> -->
-  </div>
+  <nav class="venture-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../../">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="../../../blog/">Blog</a>
+    <span class="breadcrumb-sep">/</span>
+    <div class="breadcrumb-dropdown">
+      <button class="breadcrumb-current" type="button" aria-haspopup="true" aria-expanded="false">
+        Part 1
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="breadcrumb-menu">
+      <li><a href="../just_count_to_one_hundred/"><span>Part 2: Just count to one hundred</span></a></li>
+      </ul>
+    </div>
+  </nav>
 </div>
 
 <!-- ════════ HERO ════════ -->
@@ -886,6 +894,21 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Breadcrumb dropdown ──
+const breadcrumbDropdown = document.querySelector('.breadcrumb-dropdown');
+if (breadcrumbDropdown) {
+    const btn = breadcrumbDropdown.querySelector('.breadcrumb-current');
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = breadcrumbDropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', () => {
+        breadcrumbDropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+    });
+}
 </script>
 
 </body>
