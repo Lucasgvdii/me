@@ -53,17 +53,19 @@
 
             <div class="tab-content" id="personal-tab">
                 <div class="about-content">
-                    <img src="../assets/me-square.png" alt="Lucas García de Viedma Pérez" class="about-image-float personal-only">
-                    <p>Hey! I'm Lucas, co-founder of CloudClerk, Numia, ObsessionDB, and Convea.</p>
-                    <p>I'm deeply driven by data and complex systems, and I spend most of my time turning one into solutions for the other. I'm a workaholic by nature, which helps when your brain never stops looking for the next problem worth solving.</p>
-                    <p>Originally from Alcalá de Henares, Spain, I've lived and worked across Europe — from a forest outside Helsinki to Florence and Cannes. I operate fluently in Spanish, English, and French.</p>
-                    <p>A couple of years ago, I turned down an offer in strategic investment modeling at UBS to become a founding engineer at a blockchain startup. Since then, I've focused my career on building products around technologies that I believe can create meaningful solutions to difficult problems. That path eventually led me to data infrastructure, blockchain analytics, and, more recently, AI systems and agents.</p>
-                    <p>Today, most of my time goes into ObsessionDB, where we're trying to reinvent the managed ClickHouse market. Our focus is simple: make analytical databases significantly faster, more cost-efficient, and easier to operate without forcing teams to compromise on performance. We are also working on ch-kit, the first drizzle-kit tooling for ClickHouse, a gap that was missing for serious workloads (and it's open source!).</p>
-                    <p>In addition, I'm also the CEO of CloudClerk, where we're building BigQuery cost monitoring and optimization tools that combine large-scale data engineering with AI agents to help teams gain observability and reduce costs.</p>
-                    <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University, graduating with a 9.2 GPA, as well as a Bachelor's degree in Computer Science Engineering. Across my ventures, I've helped generate over $3M in revenue, reached more than 150,000 individual users, and served over 50 client organizations.</p>
-                    <p>Outside of work, I'm competitive by design. I hold a red belt in taekwondo (one step away from black, by choice rather than ability), reached the top 0.9% of players worldwide in League of Legends, and now channel that same energy into bouldering. I also love surfing, though not nearly as often as I'd like.</p>
-                    <p>I've always been an obsessive reader. Fiction has been my favorite genre for as long as I can remember — Dumas, Emilio Salgari, Tolkien, and Patrick Rothfuss are among my long-time favorites — although I can spend just as much time reading about economics, history, or technology.</p>
-                    <p>I also enjoy debating almost anything interesting: philosophy, politics, economics, technology, or even fruit rankings. Few things are as enjoyable to me as exploring ideas that don't have simple answers.</p>
+                    <div class="about-image-float personal-only">
+                        <img src="../assets/me-square.png" alt="Lucas García de Viedma Pérez">
+                    </div>
+                    <p>Hey! I'm Lucas, co-founder and lead forward deployed engineer (data, AI and product) of CloudClerk, Numia, ObsessionDB, and Convea.</p>
+                    <p>I work at the intersection of business and technology, and most of my time goes into using one to build solutions for the other. I'm a workaholic by nature, which is useful when your brain never stops looking for the next problem worth solving.</p>
+                    <p>I'm from Alcalá de Henares, Spain. I've lived and worked across Europe (from a forest outside Helsinki to Florence and Cannes), and operate fluently in Spanish, English, and French.</p>
+                    <p>A couple of years ago I turned down a strategic investment modeling offer at UBS to become founding engineer at a blockchain startup. Since then, I've focused my career on building products around technologies I believe can create meaningful solutions to difficult problems. That path led me through big data infrastructure, blockchain analytics, and more recently into AI systems and agents.</p>
+                    <p>Today, most of my time goes into ObsessionDB, where we're reinventing the managed ClickHouse market. The focus is simple: make analytical databases significantly faster, more cost-efficient, and easier to operate, without forcing teams to compromise on performance. We're also building ch-kit, the first drizzle-kit tooling for ClickHouse: a gap missing for serious workloads, and open source.</p>
+                    <p>In parallel, I'm leading CloudClerk, a BigQuery cost monitoring and optimization tool that combines large-scale data engineering with AI agents to help teams gain observability and reduce costs.</p>
+                    <p>I hold an EIT Digital Master's in Data Science and Entrepreneurship from Universidad Politécnica de Madrid and Aalto University (9.2 GPA), plus a Bachelor's in Computer Science Engineering. Across my ventures, I've helped generate over $3M in revenue, reached more than 150,000 individual users, and served 50+ client organizations.</p>
+                    <p>Outside of work, I get obsessive about disciplines that take years to get right. I hold a red belt in taekwondo (one step from black, by choice rather than ability), and now channel the same intensity into bouldering. I also love surfing when life allows.</p>
+                    <p>I read a lot, mostly economics, history, and technology. Thinking about how incentives and systems generate outcomes is the best way I've found to keep judgment sharp across the work I do.</p>
+                    <p>I also enjoy debating almost anything interesting: philosophy, politics, economics, technology. Few things are as enjoyable to me as exploring ideas that don't have simple answers.</p>
                     <p>At the end of the day, I believe in being at the frontier of business and engineering, designing and building products that are both technically excellent and genuinely useful. No shortcuts, no fluff.</p>
                 </div>
             </div>
@@ -99,9 +101,10 @@
                                 }
                                 * { box-sizing: border-box; margin: 0; padding: 0; }
                                 .cv { max-width: 880px; margin: 0 auto; background: #fff; padding: 56px 64px; box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.16); border-radius: 4px; }
-                                .cv-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 0; margin-bottom: 8px; }
+                                .cv-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 0; margin-bottom: 18px; }
                                 .cv-header-main { flex: 1; min-width: 0; display: flex; align-items: center; gap: 14px; }
-                                .cv-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+                                .cv-avatar { width: 64px; height: 64px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+                                .cv-avatar img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.45); transform-origin: 75% top; display: block; }
                                 .cv-header h1 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 35px; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; }
                                 .cv-role { font-size: 14px; color: var(--muted); font-weight: 500; letter-spacing: 0.3px; margin-bottom: 0; }
                                 .cv-contact-side { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; text-align: right; font-size: 12px; color: var(--muted); white-space: nowrap; }
@@ -109,8 +112,9 @@
                                 .cv-contact-side a:hover { color: var(--ink); border-bottom-color: var(--ink); }
                                 .cv-grid { display: grid; grid-template-columns: 1fr 190px; gap: 40px; }
                                 h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 17px; line-height: 26px; letter-spacing: 0.2px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
-                                section { margin-bottom: 28px; }
+                                section { margin-bottom: 18px; }
                                 section:last-child { margin-bottom: 0; }
+                                .summary { margin-bottom: 18px; }
                                 .summary p { color: var(--muted); line-height: 1.65; font-size: 12.5px; }
                                 .entry { margin-bottom: 18px; }
                                 .entry:last-child { margin-bottom: 0; }
@@ -164,22 +168,23 @@
                             <main class="cv">
                                 <header class="cv-header">
                                     <div class="cv-header-main">
-                                        <img class="cv-avatar" src="../assets/me-square.png" alt="Lucas García de Viedma Pérez">
+                                        <div class="cv-avatar">
+                                            <img src="../assets/me-cv-avatar.png" alt="Lucas García de Viedma Pérez">
+                                        </div>
                                         <div>
                                             <h1>Lucas García de Viedma Pérez</h1>
-                                            <div class="cv-role">Co-Founder | Complex Data Systems Engineering &amp; Product Management</div>
+                                            <div class="cv-role">Founder - Lead Forward Deployed Engineer, Data, AI &amp; Product</div>
                                         </div>
                                     </div>
                                     <ul class="cv-contact-side">
                                         <li><a href="mailto:lucas.gvdp@gmail.com">lucas.gvdp@gmail.com</a></li>
                                         <li><a href="https://www.linkedin.com/in/lucas-garcia-de-viedma-p%C3%A9rez/" target="_blank" rel="noopener">LinkedIn</a></li>
-                                        <li><a href="https://x.com/dataphagus" target="_blank" rel="noopener">X / @dataphagus</a></li>
                                         <li><a href="https://lucasgvd.eu" target="_blank" rel="noopener">lucasgvd.eu</a></li>
                                     </ul>
                                 </header>
                                 <section class="summary">
                                     <h2>Profile</h2>
-                                    <p>Cross-functional lead engineer working at the intersection of business, engineering and product — turning ambiguity into scalable systems, helping customers solve hard problems, and building products that create meaningful impact. Six-plus years across complex data and AI systems: petabyte-scale architectures, product strategy and development, and direct management of institutional clients. Four times on the founding team, over $3M revenue generated, more than 150k end users. Passionate about AI and the boundaries of autonomous agentic workflows in real-world environments. Operate fluently in Spanish, English, and French.</p>
+                                    <p>Lead engineer and product operator with 6+ years building data and AI systems, including petabyte-scale architectures, product strategy, and direct institutional client management. Four-time founding team member with $3M+ revenue generated and 150k+ end users; focused on AI, agentic workflows, and shipping scalable technical products.</p>
                                 </section>
                                 <div class="cv-grid">
                                     <div class="main-col">
@@ -192,9 +197,9 @@
                                                 </div>
                                                 <div class="entry-org">ObsessionDB</div>
                                                 <ul class="entry-bullets">
-                                                    <li>Working on pushing the limits of managed ClickHouse® performance through a proprietary compute-compute-storage separation layer, paired with a console offering extended functionalities — materialized views backfilling, jobs management, and settings modularity.</li>
-                                                    <li>Designing, building and maintaining CH-KIT — the first open-source drizzle-kit-style tooling for ClickHouse (TypeScript and Python) — a key enabler for large-scale adoption of the technology in serious environments.</li>
-                                                    <li>Serving as Lead Forward Deployed Engineer, working directly with clients to design their data systems through ObsessionDB and its ecosystem, embedding senior expertise where in-house ClickHouse knowledge is scarce.</li>
+                                                    <li>Led data/cloud infrastructure work centered on managed ClickHouse® performance, building a compute-compute-storage separation layer and a console with materialized view backfilling, jobs management, and settings modularity.</li>
+                                                    <li>Built and maintained CH-KIT, an open-source ClickHouse® tool in TypeScript and Python, to support adoption in production environments.</li>
+                                                    <li>Served as Lead Forward Deployed Engineer with clients, designing data systems through ObsessionDB where in-house ClickHouse® expertise was limited.</li>
                                                 </ul>
                                             </div>
                                             <div class="entry">
@@ -215,9 +220,9 @@
                                                 </div>
                                                 <div class="entry-org">Numia</div>
                                                 <ul class="entry-bullets">
-                                                    <li>Managed 15+ institutional clients (i.e. dYdX, Celestia, Nansen, CosmosHub) — figuring out each team's requirements, designing the AI and data solution with them, and shipping it into production. Zero churn across the portfolio, and the close working relationship consistently surfaced upsell opportunities.</li>
-                                                    <li>Built and operated petabyte-scale processing systems across real-time and batch environments (BigQuery, dbt, ClickHouse, Tinybird), owning the architecture end-to-end from ingestion through customer-facing APIs.</li>
-                                                    <li>Designed and shipped 8+ product suites (Python, TypeScript) — from Sybil detection and LLM-based analytics agents to intelligence dashboards and outbound integrations enabling the main crypto data players to consume Numia data.</li>
+                                                    <li>Managed 15+ institutional clients, including dYdX, Celestia, Nansen, and CosmosHub, by gathering requirements, designing AI and data solutions, and shipping them into production; maintained zero churn and surfaced upsell opportunities.</li>
+                                                    <li>Built and operated petabyte-scale systems across real-time and batch environments using BigQuery, dbt, ClickHouse, and Tinybird, owning architecture from ingestion through customer-facing APIs.</li>
+                                                    <li>Shipped 8+ product suites in Python and TypeScript, including Sybil detection, LLM-based analytics agents, dashboards, and outbound integrations for major crypto data players.</li>
                                                 </ul>
                                             </div>
                                             <div class="entry">
@@ -225,7 +230,7 @@
                                                     <span class="entry-title">Software Developer, Data Scientist</span>
                                                     <span class="entry-date">2020 — 2021</span>
                                                 </div>
-                                                <div class="entry-org">Evidence Based Behavior (EB2)</div>
+                                                <div class="entry-org">Evidence Based Behavior (EB2) - Applied AI for psychiatric patients</div>
                                             </div>
                                         </section>
                                         <section>
@@ -257,9 +262,9 @@
                                             <div class="skill-group">
                                                 <div class="skill-group-title">Data and Infra</div>
                                                 <div class="tags">
-                                                    <span class="tag">Real time (ClickHouse, Tinybird)</span>
-                                                    <span class="tag">Batch (BigQuery, dbt)</span>
-                                                    <span class="tag">Cloud (GCP, Docker, Hetzner)</span>
+                                                    <span class="tag">Real time (ClickHouse, Tinybird...)</span>
+                                                    <span class="tag">Batch (BigQuery, dbt...)</span>
+                                                    <span class="tag">Cloud (GCP, Docker, Hetzner...)</span>
                                                 </div>
                                             </div>
                                             <div class="skill-group">
@@ -294,31 +299,6 @@
                                                 <li><span>Spanish</span><span class="level">Native</span></li>
                                                 <li><span>English</span><span class="level">C1 CAE</span></li>
                                                 <li><span>French</span><span class="level">B2 DELF</span></li>
-                                            </ul>
-                                        </section>
-                                        <section class="sidebar-block">
-                                            <h2>Main interests</h2>
-                                            <ul class="interests-grid">
-                                                <li>AI</li>
-                                                <li>Finance</li>
-                                                <li>Robotics</li>
-                                                <li>Energy</li>
-                                            </ul>
-                                        </section>
-                                        <section class="sidebar-block">
-                                            <h2>Particularities</h2>
-                                            <ul class="meta-list">
-                                                <li><span>Taekwondo</span><span class="meta-val">Red belt</span></li>
-                                                <li><span>League of Legends</span><span class="meta-val">Reached 0.9% worldwide</span></li>
-                                                <li><span>Currently</span><span class="meta-val">Bouldering, surfing</span></li>
-                                            </ul>
-                                        </section>
-                                        <section class="sidebar-block">
-                                            <h2>Lived and worked in</h2>
-                                            <ul class="meta-list">
-                                                <li><span>Spain</span><span class="meta-val">Madrid</span></li>
-                                                <li><span>Finland</span><span class="meta-val">Helsinki</span></li>
-                                                <li><span>Italy</span><span class="meta-val">Florence</span></li>
                                             </ul>
                                         </section>
                                     </aside>
